@@ -1,0 +1,20 @@
+package com.test;
+
+import com.dao.StuDao;
+import com.dao.TeacherDao;
+import com.dao.impl.StuDaoImpl;
+import com.dao.impl.TeacherDaoImpl;
+import com.model.Stu;
+import com.model.Teacher;
+
+public class TestCase1 {
+
+	public static void main(String[] args) {
+		TeacherDao dao = new TeacherDaoImpl();
+		dao.saveTeacher(new Teacher());
+		
+		StuDao dao2 = new StuDaoImpl();
+		dao2.saveStu(new Stu());
+	}
+	
+}

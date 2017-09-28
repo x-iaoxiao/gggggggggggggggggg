@@ -1,0 +1,127 @@
+package com.utils;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.beanutils.BeanUtils;
+
+import com.config.AppConfig;
+
+public class DaoSupport {
+
+	private Connection conn = null;
+	private PreparedStatement ps = null;
+	private ResultSet rs = null;
+
+	public void getConnection() {
+
+		try {
+			Class.forName( AppConfig.DRIVER_CLASS );
+			conn = DriverManager.getConnection( AppConfig.URL , AppConfig.USERNAME , AppConfig.PASSWORD );
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	// 专门 用于 执行 增删改
+	public int executeUpdate(String sql, Object... params) {
+		System.out.println("SQL> " + sql);
+		getConnection();
+		int affectRows = 0;
+
+		try {
+			// 问号不确定 , 但可以根据 参数数量来推测 问号的 数量 并 赋值
+			ps = conn.prepareStatement(sql);
+			for (int i = 0; i < params.length; i++) {
+				ps.setObject(i + 1, params[i]);
+			}
+			affectRows = ps.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		releaseResouce();
+
+		return affectRows;
+	}
+
+	// 专门 用于 执行 查询
+	public ResultSet executeQuery(String sql, Object... params) {
+
+		System.out.println("SQL> " + sql);
+		getConnection();
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			if(params!=null) {
+				for (int i = 0; i < params.length; i++) {
+					ps.setObject(i + 1, params[i]);
+				}
+			}
+			rs = ps.executeQuery();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return rs;
+	}
+	
+	public List queryForList( String sql ,  Class clazz , Object... params )  {
+		
+		List datas = new ArrayList();
+		
+		System.out.println("SQL> " + sql);
+		getConnection();
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			if(params!=null) {
+				for (int i = 0; i < params.length; i++) {
+					ps.setObject(i + 1, params[i]);
+				}
+			}
+			rs = ps.executeQuery();
+			ResultSetMetaData meta = rs.getMetaData();
+			while(rs.next()) {
+				
+				Map<String , Object> values = new HashMap<String  , Object>();   
+				Object o = clazz.newInstance();  // o > Teacher
+				
+				for( int i = 0 ; i < meta.getColumnCount() ; i++) {
+					values.put( meta.getColumnLabel( i+1 ).toLowerCase()  , rs.getObject( i+1));
+				}
+				
+				BeanUtils.populate(o, values); //将 map 内容   赋值到  o , 通过反射机制 , 避免写 setter
+				
+				datas.add(o);
+			}
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return datas;
+	}
+
+	public void releaseResouce() {
+		try {
+			if (!rs.isClosed())
+				ps.close();
+			if (!ps.isClosed())
+				ps.close();
+			if (!conn.isClosed())
+				conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

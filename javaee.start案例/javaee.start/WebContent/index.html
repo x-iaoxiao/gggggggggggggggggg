@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p align="center"> Stu 系统</p>
+	<br>
+	<a href="/javaee.start/StuServlet?action=findAll">查询所有学生</a>
+	<hr>
+	
+		
+	
+	<form action="/javaee.start/StuServlet"  method="get">
+		<input type="hidden" name="action" value = "saveStu">
+		SID : <input type="text" name="sid" ><br>
+		SNAME : <input type="text" name="sname" ><br>
+		AGE : <input type="text" name="age" ><br>
+		<input type="submit" value="添加" ><br>
+	
+	</form>
+
+
+</body>
+</html>

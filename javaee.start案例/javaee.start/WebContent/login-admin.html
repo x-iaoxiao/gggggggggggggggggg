@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		
+		<form action="/javaee.start/AdminServlet" method="get">
+			<fieldset style="border: 1px gray solid ;">
+				<legend>Login</legend>
+				
+				<input name="name"><br>
+				<input name = "pwd"><br>
+				<div style="position:relative;">
+					<input name='j_captcha_response'  value=''>
+					<img id="img" src="/javaee.start/jcaptcha" height="52px"  style="position: absolute; " ><br>
+				</div>
+				
+				<input type="submit">
+				
+			</fieldset>
+		</form>
+		
+</body>
+</html>
+<script>
+	window.onload = function() {
+		img.onclick = function() {
+			this.src = '/javaee.start/jcaptcha';
+		}
+	}
+	
+</script>

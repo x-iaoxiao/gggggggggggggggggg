@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<style type="text/css">
+		
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			#con {
+				width: 100%;
+				height: 100%;
+				/*border: 1px solid red;*/
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content:space-between;
+				position: fixed;
+			}
+			
+			#first {
+				width: 100%;
+				height: 25px;
+				background-color: #212121;
+				display: flex;
+				flex-flow: row-reverse;
+				/*line-height: 25px;*/
+				align-items: center;
+			}
+			
+			#second {
+				width: 100%;
+				height: 45px;
+				background-color: rgb(57, 58, 63);
+				display: flex;
+				flex-flow: row;
+				align-items: center;
+			}
+			
+			#third {
+				width: 100%;
+				height: 100%;
+				flex-grow: 1;
+				overflow-y:scroll ;
+				/*display: flex;*/
+				flex-flow: column;
+				/*flex-flow: column nowrap;*/
+			}
+			::-webkit-scrollbar{
+				display: none;
+			}
+			#forth {
+				width: 100%;
+				height: 50px;
+				display: flex;
+				flex-flow: row;
+				/*border: 1px solid blue;*/
+				align-items: center;
+			}
+			
+			#fifth {
+				width: 100%;
+				height: 45px;
+				background: black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#time {
+				width: 10%;
+				height: 100%;
+				color: #FFFFFF;
+			}
+			
+			#power {
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/电池_battery142.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			#xinghao {
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/信号.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			#n4g {
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/n4g.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			#wifi {
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/wifi.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			#second-left {
+				width: 85%;
+				height: 100%;
+				color: #FFFFFF;
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-start;
+				align-items: center;
+                /*border: 1px solid red;*/
+			}
+			
+			#go{
+				height: 100%;
+				background: url(../img/微信第一页第一次修改/朋友圈返回.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				transform: scale(.5);
+				/*border: 1px solid red;*/
+				display: flex;
+				flex: 1;
+			}
+			#kongbai{
+				display: flex;
+				flex: 5;
+				/*border: 1px solid red;*/
+			}
+			
+			#person {
+				width: 15%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/联系人-个人中心.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+				transform: scale(.9);
+				align-content: center;
+				line-height: 25px;
+			}
+			
+			#goback {
+				width: 34%;
+				height: 60%;
+				background: url(../img/微信第一页第一次修改/返回.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#home {
+				width: 33%;
+				height: 55%;
+				background: url(../img/微信第一页第一次修改/圆圈-2.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#recently {
+				width: 33%;
+				height: 55%;
+				background: url(../img/微信第一页第一次修改/正方形.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#weichat {
+				width: 100%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/微信绿色.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid blue;*/
+			}
+			
+			#relation {
+				width: 100%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/通讯录.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid blue;*/
+			}
+			
+			#find {
+				width: 100%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/发现.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid blue;*/
+			}
+			
+			#me {
+				width: 100%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/我.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid blue;*/
+				transform: scale();
+			}
+			
+			.word {
+				width: 100%;
+				height: 20%;
+				font-size: xx-small;
+				text-align: center;
+				line-height: 30%;
+				color: #515151;
+			}
+			
+			.wordword {
+				width: 100%;
+				height: 20%;
+				font-size: xx-small;
+				text-align: center;
+				line-height: 30%;
+				color: green;
+			}
+			#red{
+				width: 10px;
+				height: 10px;
+				background-color: red;
+				color: #FFFFFF;
+				font-size:5px;
+				border-radius: 50%;
+				position: absolute;
+				top: -5px;
+				right:-5px;
+				text-align: center;
+				line-height:10px ;
+			}
+			#red2{
+				width: 15px;
+				height: 15px;
+				background-color: red;
+				color: #FFFFFF;
+				font-size:5px;
+				border-radius: 50%;
+				position: absolute;
+				top: -5px;
+				right:30%;
+				text-align: center;
+				line-height:10px ;
+			}
+			
+			#say{
+				height: 100%;
+				display: flex;
+				flex: 1;
+				/*border: 1px solid red;*/
+				background: url(../img/微信第一页第一次修改/语音.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				transform: scale(.8);
+			}
+			#emoj{
+				height: 100%;
+				display: flex;
+				flex: 1;
+				background: url(../img/微信第一页第一次修改/表情.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				transform: scale(.8);
+			}
+			#more{
+				height: 100%;
+				display: flex;
+				flex: 1;
+				/*border: 1px solid yellow;*/
+				background: url(../img/微信第一页第一次修改/聊天加.png) no-repeat;
+	            
+				background-size: contain;
+				background-position: center;
+				margin-right: 3px;
+				transform: scale(.8);
+			}
+			#write{
+				height: 70%;
+				display: flex;
+				flex: 10;
+				border-bottom: 1px solid blue;
+			}
+			#ipt{
+				
+				width: 100%;
+				border-top: #EEEEEE;
+				border: none;
+			}
+		    
+		    .msg{
+		    	width: 100%;
+		    	height: 70px;
+		    	/*border:1px solid red;*/
+		    	display: flex;
+		    	flex-flow: row;
+		    	align-items: center;
+		    	justify-content: center;
+		    	justify-content: flex-end;
+		    }
+		    .msgimg{
+		    	
+		    	width: 40px;
+		    	height: 40px;
+		    	background: url(../9.5/source.图片切换/2.jpg) no-repeat;
+				background-size: contain;
+				background-position: center;
+		    	margin: 15px;
+		    }
+		    .msgtext{
+		    	line-height: 30px;
+		    	height: 30px;
+		    	background-color: #9ACD32;
+		    	box-shadow: 0 0 2px #008B8B;
+		    	border-radius: 7%;
+		    }
+		    
+		     .reply{
+		    	width: 100%;
+		    	height: 70px;
+		    	/*border:1px solid yellow;*/
+		    	display: flex;
+		    	flex-flow: row;
+		    	align-items: center;
+		    	justify-content: center;
+		    	justify-content: flex-start;
+		    }
+		    .replyimg{
+		    	
+		    	width: 40px;
+		    	height: 40px;
+		    	background: url(../img/微信第一页/头像.jpg) no-repeat;
+				background-size: contain;
+				background-position: center;
+		    	margin: 15px;
+		    }
+		    .replytext{
+		    	line-height: 30px;
+		    	height: 30px;
+		    	background-color: white;
+		    	/*border: 1px solid #008B8B;*/
+		    	box-shadow: 0 0 3px #A9A9A9;
+		    	border-radius: 7%;
+		    }
+		</style>
+	</head>
+	<body>
+		<div id="con">
+			<div id="first">
+				<div id="time">9:42</div>
+				<div id="power"></div>
+				<div id="xinghao"></div>
+				<div id="n4g"></div>
+				<div id="wifi"></div>
+			</div>
+			<div id="second">
+                 <div id="second-left">
+                 	<a href="第一页.html" id="go"></a>
+                 	<div style="color:rgb(213,213,214) ;display: flex; flex: 1">妈妈</div>
+                 	<div id="kongbai"></div>
+                 </div>
+                 <div id="person"></div>
+			</div>
+
+			<div id="third">
+				
+			</div>
+			
+			<div id="forth">
+					<div id="say"></div>
+					<div id="write"><input id="ipt" /></div>
+					<div id="emoj"></div>
+					<div id="more"></div>
+			</div>
+			<div id="fifth">
+				<div id="goback"></div>
+				<div id="home"></div>
+				<div id="recently"></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+
+    var world =['不好','要多少','哦','吃饭','刚到家','还有钱吗','多喝水','多吃水果','少买衣服','多吃饭','多休息'];
+    
+    function reply(father,world){
+    	
+    	var n=Math.round(Math.random()*10);
+    
+    	var replymsg=document.createElement("div");
+		
+		var replyimg=document.createElement("div");
+		
+		var replytext=document.createElement("div");
+		
+		replymsg.className="reply";
+		
+		replyimg.className="replyimg";
+		
+		replytext.className="replytext";
+		
+		replytext.innerText=world[n];
+
+		father.appendChild(replymsg);
+		
+		father.lastChild.appendChild(replyimg);
+		
+		father.lastChild.appendChild(replytext);
+    	
+    }
+
+    var btn=document.getElementById("more");
+    
+    ipt.onfocus=function(){
+    	
+    	btn.style.background="url(../img/微信第一页第一次修改/发送.png) no-repeat";
+    }
+	ipt.onblur=function(){
+		 
+		 btn.style.background="url(../img/微信第一页第一次修改/聊天加.png) no-repeat";
+	}
+	btn.onclick=function(){
+		
+		if(ipt.value==''){
+			
+			return;
+		}
+		
+		var father=document.getElementById("third");
+		
+		var newmsg=document.createElement("div");
+		
+		var newimg=document.createElement("div");
+		
+		var newtext=document.createElement("div");
+		
+		newmsg.className="msg";
+		
+		newimg.className="msgimg";
+		
+		newtext.className="msgtext";
+		
+		newtext.innerText=ipt.value;
+		
+//		var newitem=father.firstChild;
+		
+//		console.log(newitem);
+		
+		father.appendChild(newmsg);
+		
+		father.lastChild.appendChild(newtext);
+		
+		father.lastChild.appendChild(newimg);
+		
+		ipt.value="";
+		
+		btn.style.background="url(../img/微信第一页第一次修改/聊天加.png) no-repeat";
+		
+		reply(father,world);
+		
+	}
+	
+</script>

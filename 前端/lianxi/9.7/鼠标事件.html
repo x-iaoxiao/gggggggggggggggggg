@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				
+				width: 80px;
+				height: 80px;
+				position: fixed;
+				left: 100px;
+				right: 100px;
+				background-color: #FFE4C4;
+			}
+			.l{
+				
+			    background-color: yellow;
+			}
+			.r{
+				
+				background-color: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	window.onload=function(){
+		
+		document.oncontextmenu=function(){
+			
+			event.preventDefault();
+		}
+		
+		window.onmousedown=function(){
+			
+			console.log(event.button);
+			
+			if(event.button==0){
+				
+				var mousel=document.createElement("div");
+				
+				mousel.style.left = event.x + "px"
+				
+			    mousel.style.top = event.y + "px"
+			    
+				document.body.appendChild(mousel);
+				
+				mousel.classList.add("l");
+				
+			}
+			if(event.button==2){
+				
+				mouser=document.createElement("div");
+				
+				mouser.style.left = event.x + "px"
+			    
+			    mouser.style.top = event.y + "px"
+				
+				document.body.appendChild(mouser);
+				
+				mouser.classList.add("r");
+				
+			}
+			if(event.button==1){
+				
+				mousem=document.createElement("div");
+				
+				mousem.style.left = event.x + "px"
+			    
+			    mousem.style.top = event.y + "px"
+				
+				document.body.appendChild(mousem);
+				
+			}
+		}
+	}
+	
+</script>

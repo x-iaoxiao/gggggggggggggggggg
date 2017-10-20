@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			#con-friendloop {
+				width: 100%;
+				height: 100%;
+				/*border: 1px solid red;*/
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: space-between;
+				position: fixed;
+			}
+			
+			#top-friendloop {
+				width: 100%;
+				height: 40px;
+				background-color: #212121;
+				display: flex;
+				flex-flow: row-reverse;
+				line-height: 25px;
+				align-items: center;
+			}
+			
+			#back-and-content {
+				width: 100%;
+				height: 100%;
+				flex-grow: 1;
+				overflow-y: scroll;
+			}
+			
+			#menue-friendloop {
+				width: 100%;
+				height: 45px;
+				background-color: rgb(57, 58, 63);
+				display: flex;
+			}
+			/*#tongzhi{}*/
+			
+			#blank {
+				width: 100%;
+				height: 60px;
+				/*border: 1px solid lightseagreen;*/
+			}
+			
+			::-webkit-scrollbar {
+				display: none;
+			}
+			
+			#bottom-friendloop {
+				width: 100%;
+				height: 45px;
+				background: black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#time {
+				width: 10%;
+				height: 100%;
+				color: #FFFFFF;
+			}
+			
+			#power {
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/电池_battery142.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			#xinghao {
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/信号.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			#n4g {
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/n4g.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			#wifi {
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/wifi.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			#goback {
+				width: 34%;
+				height: 60%;
+				background: url(../img/微信第一页第一次修改/返回.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#home {
+				width: 33%;
+				height: 55%;
+				background: url(../img/微信第一页第一次修改/圆圈-2.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#recently {
+				width: 33%;
+				height: 55%;
+				background: url(../img/微信第一页第一次修改/正方形.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#menue-friendloop-left {
+				width: 60%;
+				height: 100%;
+				color: #FFFFFF;
+				/*text-indent: 3%;*/
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-start;
+				align-items: center;
+				/*vertical-align: middle;*/
+				/*border: 1px solid red;*/
+			}
+			
+			#menue-friendloop-right {
+				width: 40%;
+				height: 100%;
+				/*border: 1px solid red;*/
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				justify-content: flex-end;
+			}
+			
+			#fanhui {
+				width: 30%;
+				height: 50%;
+				background: url(../img/微信第一页第一次修改/朋友圈返回.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#paizhao {
+				width: 40%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/拍照.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#back-friendloop {
+				display: flex;
+				flex-flow: row row-reverse;
+				width: 100%;
+				height: 350px;
+				background: url(../img/微信第一页第一次修改/微信图片_20170801180223.jpg);
+				background-size: cover;
+				/*background-position: cecontain;*/
+				background-repeat: no-repeat;
+				position: relative;
+				/*align-items: flex-start;*/
+			}
+			
+			#con-friendloop {
+				/*width: 100%;
+				height: 100%;
+				flex-grow:1 ;*/
+			}
+			
+			#mypicture {
+				height: 60px;
+				width: 60px;
+				/*position: absolute;*/
+				border: 3px solid#FFFFFF;
+				background: url(../img/微信第一页第一次修改/微信图片_20170801102750.jpg);
+				background-size: cover;
+				background-repeat: no-repeat;
+				/*right: 7%;*/
+				/*bottom: -30px;*/
+			}
+			
+			#xiaoxiao {
+				color: white;
+				width: 100px;
+				/*border: 1px solid red;*/
+				/*position: absolute;
+				bottom: 0px;
+				left: 50%;*/
+			}
+			
+			#position {
+				display: flex;
+				flex-flow: row;
+				position: absolute;
+				bottom: -30px;
+				right: 60px;
+				/*border: 1px solid red;*/
+			}
+			
+			.one {
+				width: 100%;
+				min-height: 80px;
+				max-height: 300px;
+				border-bottom: 1px solid #E0E0E0;
+				border-top: 10px solid #FFFFFF;
+				display: flex;
+				flex-flow: row nowrap;
+				/*border: 1px solid black;*/
+			}
+			
+			.left-touxiang {
+				width: 50px;
+				/*height: 200px;*/
+				/*border: 1px solid red;*/
+				text-align: center;
+				min-width: 45px;
+			}
+			
+			.right-content {
+				width: 80%;
+				/*height: 200px;*/
+				display: flex;
+				flex-flow: column nowrap;
+
+			}
+			
+			img {
+				width: 45px;
+				height: 45px;
+			}
+			
+			.nick {
+				color: #90A4AE;
+				font-size: small;
+				font-family: "微软雅黑";
+				border-left: 5px solid #FFFFFF;
+			}
+			
+			.says {
+				color: #616161;
+				font-size: small;
+				border: 5px solid #FFFFFF;
+			}
+			
+			.tu {
+				/*width: 100%;*/
+				border: 5px solid red;
+				/*display: flex;
+				flex-flow: row;*/
+			}
+			/*.tu-img {
+				flex-flow: r;
+			}*/
+			
+			#tu-1-1 {
+				height: 120px;
+				width: 120px;
+				background: url(../img/微信第一页第一次修改/微信图片_20170801135448.jpg);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				border: 10px solid #FFFFFF;
+			}
+			
+			#tu-2-1 {
+				height: 120px;
+				width: 120px;
+				background: url(../img/微信第一页第一次修改/微信图片_20170801173523.jpg);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				border: 10px solid #FFFFFF;
+			}
+			
+			#tu-2-2 {
+				height: 120px;
+				width: 120px;
+				background: url(../img/微信第一页第一次修改/微信图片_20170801173534.jpg);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				border: 10px solid #FFFFFF;
+			}
+			
+			#tu-4-1 {
+				height: 120px;
+				width: 120px;
+				background: url(../img/微信第一页第一次修改/微信图片_20170801175504.jpg);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				border: 10px solid #FFFFFF;
+			}
+			
+			#tu-4-2 {
+				height: 120px;
+				width: 120px;
+				background: url(../img/微信第一页第一次修改/微信图片_20170801175509.jpg);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				border: 10px solid #FFFFFF;
+			}
+			
+			#tu-4-3 {
+				height: 120px;
+				width: 120px;
+				background: url(../img/微信第一页第一次修改/微信图片_20170801175513.jpg);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				border: 10px solid #FFFFFF;
+			}
+			
+			#tu-5-1 {
+				height: 120px;
+				width: 120px;
+				background: url(../img/微信第一页第一次修改/微信图片_20170801103359.jpg);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				border: 10px solid #FFFFFF;
+			}
+			
+			#waaaaa {
+				height: 15px;
+				width: 15px;
+				background: url(../img/微信第一页第一次修改/点赞评论菜单.png);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			/*评论*/
+			.mp{
+				/*border: 1px solid yellow;*/
+				height: 15px;
+				width: 15px;
+				background: url(../img/微信第一页第一次修改/评论.png);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			/*点赞*/
+			.mz{
+				/*border: 1px solid red;*/
+				height: 15px;
+				width: 15px;
+				background: url(../img/微信第一页第一次修改/点赞.png);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			#good{
+				height: 15px;
+				width: 15px;
+				background: url(../img/微信第一页第一次修改/点赞.png);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				/*border: 5px solid;*/
+			}
+			.good{
+				height: 15px;
+				width: 15px;
+				background: url(../img/微信第一页第一次修改/点赞.png);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			.trag{
+				width: 0px;
+				height: 0px;
+				border-left: 8px solid transparent;
+				border-right: 8px solid transparent;
+				border-bottom: 11.5px solid rgb(238,238,238);
+				position: relative;
+				/*top: -10.8px;*/
+				left: 5%;
+			}
+			a {
+				text-decoration:none;
+			}
+
+		    .temp{
+		    	
+		    	position: fixed;
+		    	width: 100%;
+		    	height: 100%;	
+		    	background-color: white;	    	
+		    	
+		    }
+		    .newgood{
+		    	
+		    	width: 100%;
+		    	height: 15px;
+		    	background-color: #DCDCDC;
+		    }
+		</style>
+	</head>
+
+	<body>
+		<div id="con-friendloop">
+			<div id="top-friendloop">
+				<div id="time">9:42</div>
+				<div id="power"></div>
+				<div id="xinghao"></div>
+				<div id="n4g"></div>
+				<div id="wifi"></div>
+			</div>
+			<div id="menue-friendloop">
+				<div id="menue-friendloop-left">
+					<div id="fanhui"></div>
+					<a href="第三页.html"><div style="color:rgb(213,213,214) ;">朋友圈</div></a>
+				</div>
+				<div id="menue-friendloop-right">
+					<div id="paizhao">
+
+					</div>
+				</div>
+			</div>
+			<div id="back-and-content">
+				<div id="back-friendloop">
+					<div id="position">
+						<div id="xiaoxiao">潇潇</div>
+						<div id="mypicture"></div>
+					</div>
+				</div>
+				<div id="blank"></div>
+				<div id="content-friendloop">
+					<div class="one" id="one2">
+						<div class="left-touxiang"><img src="../img/微信第一页第一次修改/微信图片_20170801132040.jpg"></div>
+						<div class="right-content">
+							<div class="nick">BJT</div>
+							<div class="says">终于</div>
+							<div style="display: flex;flex-flow: row;justify-content: space-around;">
+								<div id="tu-2-1"></div>
+								<div id="tu-2-2"></div>
+							</div>
+							<div style="display:flex;flex-flow: space-between;flex-flow: row;border: 10px #FFFFFF;">
+								<div style="width: 20%; font-size: xx-small;color: #757575;">20小时前</div>
+								<div class="mmmmm" style="display: flex;flex-flow: row-reverse;width: 80%;">
+									<div id="waaaaa"></div>
+								</div>
+							</div>
+							<div class="trag"></div>
+							<div style="background-color: #F5F5F5;border-bottom: 10px solid #FFFFFF;"><font color="#2F4F4F">猪猪：</font>怎么样?<br><font color="#2F4F4F">BJT:</font>当然啦</div>
+						</div>
+					</div>
+					<div class="one" id="one1">
+						<div class="left-touxiang"><img src="../img/微信第一页第一次修改/微信图片_20170801131016.jpg"></div>
+						<div class="right-content">
+							<div class="nick">王琪</div>
+							<div class="says">(^8^)芥末美的眼妆<br>一盘Dve眼影就可以搞定</div>
+
+							<div id="tu-1-1" "></div>
+							<div style="display:flex;flex-flow: space-between;flex-flow: row;border: 10px #FFFFFF;">
+								<div style="width: 20%; font-size: xx-small;color: #757575;">20小时前</div>
+								<div class="mmmmm" style="display: flex;flex-flow: row-reverse;width: 80%;">
+									<div id="waaaaa"></div>
+								</div>
+							</div>
+						</div>
+					</div>	
+					<div class="one " id="one3 ">
+						<div class="left-touxiang "><img src="../img/微信第一页第一次修改/微信图片_20170801132107.jpg "></div>
+						<div class="right-content ">
+							<div class="nick ">刘品</div>
+							<div class="says ">安全到达OK！！！</div>
+							<div style="display:flex;flex-flow: space-between;flex-flow: row;border: 10px #FFFFFF;">
+								<div style="width: 20%; font-size: xx-small;color: #757575;">20小时前</div>
+								<div class="mmmmm" style="display: flex;flex-flow: row-reverse;width: 80%;">
+									<div id="waaaaa"></div>
+								</div>
+							</div>
+							<!--<div id="tu-1-1 " "></div>-->
+							<div class="trag"></div>
+							<div style="background-color: #F5F5F5;border-bottom: 10px solid #FFFFFF;"><div id="good"></div></div>
+						</div>
+					</div>
+
+					<div class="one" id="one4">
+						<div class="left-touxiang"><img src="../img/微信第一页第一次修改/微信图片_20170801132214.jpg"></div>
+						<div class="right-content">
+							<div class="nick">鱼儿</div>
+							<div class="says">一杯敬明天，一杯敬过往</div>
+							<div style="display: flex;flex-flow: row;justify-content: space-around;">
+								<div id="tu-4-1"></div>
+								<div id="tu-4-2"></div>
+								<div id="tu-4-3"></div>
+							</div>
+							<div style="display:flex;flex-flow: space-between;flex-flow: row;border: 10px #FFFFFF;">
+								<div style="width: 20%; font-size: xx-small;color: #757575;">20小时前</div>
+								<div class="mmmmm" style="display: flex;flex-flow: row-reverse;width: 80%;">
+									<div id="waaaaa"></div>
+								</div>
+							</div>
+							
+							
+							
+						</div>
+					</div>
+
+					<div class="one" id="one5">
+						<div class="left-touxiang"><img src="../img/微信第一页第一次修改/微信图片_20170801132223.jpg"></div>
+						<div class="right-content">
+							<div class="nick">猴子</div>
+							<div id="tu-5-1"></div>
+							<div style="display:flex;flex-flow: space-between;flex-flow: row;border: 10px #FFFFFF;">
+								<div style="width: 20%; font-size: xx-small;color: #757575;">5小时前</div>
+								<div class="mmmmm" style="display: flex;flex-flow: row-reverse;width: 80%;">
+									<div id="waaaaa"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div id="bottom-friendloop">
+				<div id="goback"></div>
+				<div id="home"></div>
+				<div id="recently"></div>
+			</div>
+		</div>
+		</div>
+
+	</body>
+
+</html>
+<script type="text/javascript">
+
+/////////////点赞、评论/////////////////////////////////
+
+        var mm=document.getElementsByClassName("mmmmm");
+	
+	    var flag=true;
+	    var ff=true;
+	     var fff=true;
+	    for(var i=0;i<mm.length;i++){
+	
+	       mm[i].onclick=function(){
+		
+		     if(flag){
+			
+		     var dz=document.createElement("div");
+		
+		     var pl=document.createElement("div");
+//		    var dzz=document.createElement("div");//
+		
+//		     var plz=document.createElement("div");//
+		     dz.className="mz";
+//		dzz.innerText="点赞";//
+//		plz.innerText="评论";//
+		     pl.className="mp";
+//		 this.appendChild(plz);//
+		     this.appendChild(pl);
+//		 this.appendChild(dzz);//
+		     this.appendChild(dz);            //评论在前，点赞在后
+		    
+		     //评论
+		     this.firstChild.onclick=function(){
+//		     	console.log(this.firstChild);/////////////////////////
+		     	if(fff){
+		     var ng=document.createElement("div");
+		     
+		     ng.className="newgood";
+		     
+		     this.parentNode.parentNode.parentNode.appendChild(ng);
+		     
+		     var plrecev=document.createElement("input");
+		     
+		     ng.appendChild(plrecev);
+		     
+		     var plsent=document.createElement("input")
+		     
+		     plsent.type="button";
+		     
+		     plsent.value="发送";
+		     
+		     ng.appendChild(plsent);
+		     fff=false;
+		     }
+		     else {
+		     	console.log("remove");
+		     	this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode.parentNode.lastChild);
+//		     	this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode.parentNode.lastChild);//		        console.log("remove");
+		     	fff=true;
+		     }
+		     }
+		     
+		     //点赞
+		     this.lastChild.onclick=function(){
+		     if(ff){
+		     var ng=document.createElement("div");
+		     var sj=document.createElement("div");
+		     sj.className="trag";
+		     ng.className="newgood";
+		     this.parentNode.parentNode.parentNode.appendChild(sj);
+		     this.parentNode.parentNode.parentNode.appendChild(ng);
+		     
+		     var ngx=document.createElement("div");
+		     
+		     ngx.className="good"
+		     
+		     ng.appendChild(ngx);
+		     ff=false;
+		     }
+		     else {
+		     	console.log("remove");
+		     	this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode.parentNode.lastChild);
+		     	this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode.parentNode.lastChild);//		        console.log("remove");
+		     	ff=true;
+		     }
+		     }
+		
+		     flag=false;
+	    } 	
+	    else{
+	   	
+	   	     this.removeChild(this.lastChild);
+	   	
+	         this.removeChild(this.lastChild);
+	   	
+	   	     flag=true;
+	    }
+	    }
+	}
+///////////////////////////发朋友圈////////////////////	
+	var saysomething=document.getElementById("paizhao");
+	
+	saysomething.onclick=function(){
+		
+		var contentfriendloop=document.getElementById("content-friendloop");
+		
+		var temp=document.createElement("div");
+		
+		var receive=document.createElement("input");
+		
+		var fasong=document.createElement("input");
+		
+		fasong.value="发送";
+		
+		fasong.type="button";
+		
+		temp.className="temp";
+		
+		receive.value="这一刻的想法..";
+		
+		document.body.appendChild(temp);
+		
+		document.body.lastChild.appendChild(receive);
+		
+		document.body.lastChild.appendChild(fasong);
+		
+		fasong.onclick=function(){
+			
+			var temp1=document.getElementById("content-friendloop");
+			
+			var newsays=document.createElement("div");
+			
+			var ntx=document.createElement("div");
+			
+			var nst=document.createElement("div");
+			
+			var nsttop=document.createElement("div");
+			
+			var nstbotm=document.createElement("div");
+			
+			var Img=document.createElement("img");
+			///////////////////////时间和点赞评论菜单
+//			var other=document.createElement("div");
+//			var otherl=document.createElement("div");
+//			var otherr=document.createElement("div");
+//			var otherrn=document.createElement("div");
+//			
+			///////////////////////////////////
+			ntx.className="left-touxiang";
+			
+			Img.src="../img/微信第一页第一次修改/图3.jpg";
+			
+			newsays.className="one";
+			
+			nstbotm.innerText=receive.value;
+			
+			nstbotm.className="says";
+			
+			nsttop.className="nick";
+			
+			nsttop.innerText="我";
+			
+			temp1.appendChild(newsays);
+//          temp1.parentNode.insertBefore(temp1.firstChild,newsays);
+			
+			temp1.lastChild.appendChild(ntx);
+//          temp1.firstChild.appendChild(ntx);
+			
+			temp1.lastChild.lastChild.appendChild(Img);
+//			temp1.firstChild.lastChild.appendChild(Img);
+			
+			temp1.lastChild.appendChild(nst);
+//          temp1.firstChild.appendChild(nst);
+			
+			temp1.lastChild.lastChild.appendChild(nsttop);
+//          temp1.firstChild.lastChild.appendChild(nsttop);
+			
+			temp1.lastChild.lastChild.appendChild(nstbotm);
+//			temp1.firstChild.lastChild.appendChild(nstbotm);
+
+            document.body.removeChild(document.body.lastChild);
+            
+            
+		}
+	}
+</script>

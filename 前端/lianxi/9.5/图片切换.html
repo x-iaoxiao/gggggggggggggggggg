@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<img id="image" width="100px" height="100px" src="source.图片切换/1.jpg"/>
+	
+	
+	</body>
+</html>
+<script>
+	
+	var index=2;
+	
+	var s;
+	
+	function change(){
+		
+		if(index==4)index=1;
+		
+		image.src="source.图片切换/"+index+".jpg";
+		
+		index++;
+		
+	}
+		
+    window.onload=function(){
+    	
+    	s=setInterval("change()",200);
+    }
+	
+	image.onmouseover=function(){
+		
+		clearInterval(s);
+		console.log("来了")
+	}
+	
+	image.onmouseleave=function(){
+		
+		s=setInterval("change()",200);
+		console.log("走了")
+	}
+</script>

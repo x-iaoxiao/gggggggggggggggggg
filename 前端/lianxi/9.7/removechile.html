@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.one{
+				border: 1px solid darkolivegreen;
+			}
+			.two{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="ipt" id="add" value="add" />
+		<input type="button" name="ipt" id="delete" value="delete" />
+		<div id="father"class="one">
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var count=0;
+	
+	var add=document.getElementById("add");
+	
+	add.onclick=function(){
+		
+		var newdiv = document.createElement("div");
+		
+		newdiv.innerText=count;
+		
+		newdiv.classList.add("two");
+		
+		var father=document.getElementById("father");
+		
+		father.appendChild(newdiv);
+		
+		count++;
+	}
+	
+	var remove=document.getElementById("delete");
+	
+	remove.onclick=function(){
+		
+//		console.log("ok");
+     
+		var father=document.getElementById("father");
+		if(father.firstChild!=null)
+		father.removeChild(father.firstChild);
+	}
+	
+</script>

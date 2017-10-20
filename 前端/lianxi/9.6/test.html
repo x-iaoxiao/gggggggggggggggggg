@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自动完成</title>
+		<style type="text/css">
+			.on{
+				
+				background-color: #808080;
+			}
+		</style>
+	</head>
+	<body>
+		<input id="ipt" />
+		<div id="father"></div>
+	</body>
+</html>
+<script type="text/javascript">
+
+	var storage = ['java', 'javase', 'javaee', 'js', 'javascript', 'j#', 'oracle', 'node.js'];
+    
+    var data=[];
+    window.onkeydown=function(){
+    	
+       var list=father.children;
+       
+       if(event.keyCode==38){
+       	
+       	
+       }
+       else if(event.keyCode==40){
+       	
+       	
+       }
+       
+       else if(event.keyCode==13){
+       	
+       	
+       }
+    
+    }
+    ipt.onkeyup=function(){
+    	
+    	if(ipt.value==''){
+    		
+    		clear(father);
+    		
+    		data.length=0;
+    		
+    		return;
+    	}
+    
+    	clear(father);
+    	
+    	data.length=0;
+    	
+    	match(ipt.value);
+    	
+    	creat(data);
+    	
+    }
+    //匹配函数
+    
+    function match(str){
+    	
+    	for(var i=0;i<storage.length;i++){
+    		
+    		if(storage[i].indexOf(str)!=-1){
+    			
+    			data.push(storage[i]);
+    			
+    		}
+    	}
+    }
+
+    //创建节点
+    function creat(data){
+    	
+    	
+    	 
+    	for(var j=0;j<data.length;j++){
+    		
+    		var newson=document.createElement("div");
+    		
+    		newson.innerText=data[j];
+    		
+    		///////
+    		newson.onmouseover = function() {
+    			
+				this.classList.add("on");
+			}
+			newson.onmouseout = function() {
+				
+				this.classList.remove("on");
+			}
+			newson.onclick = function() {
+				
+				ipt.value = this.innerText;
+				
+				clear(father);
+			}
+    		///////
+    		
+    		father.appendChild(newson);
+    	}
+    }
+
+    //清空节点
+    
+    function clear(father){
+    	
+    	if(father.firstChild!=null){
+    		
+    		father.removeChild(father.firstChild);
+    		
+    		clear(father);
+    	}
+    	else{
+    	
+    	return;
+    	}
+    }
+</script>

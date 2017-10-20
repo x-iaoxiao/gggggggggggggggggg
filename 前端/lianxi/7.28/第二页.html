@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<style>
+	        * {
+	        	margin: 0px;
+	        	padding:0px; 
+	        }
+			#contain{
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: space-between;
+				flex-flow: column;
+			    position: fixed;
+			}
+			#fir2{
+				width: 100%;
+				height: 25px;
+				background-color: #212121;
+				display: flex;
+				flex-flow:row;
+				line-height:25px;
+				text-align:center;
+				flex-flow:row-reverse;
+			}
+			#time{
+				color: white;
+			}
+			#power{
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/电池_battery142.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			#xinghao{
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/信号.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			#n4g{
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/n4g.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			#sec2{
+				width: 100%;
+				height: 45px;
+				background-color: rgb(57, 58, 63);
+				display: flex;
+				/*border: 1px solid red;*/
+				flex-flow: row;
+			}
+			#sec2-left{
+				display: flex;
+				align-items: center;
+				height: 100%;
+				width: 60%;
+				/*border: 1px solid black;*/
+				text-indent: 10px;
+				color: white;
+			}
+			#sec2-right{
+				
+				height: 100%;
+				width: 40%;
+				display: flex;
+				flex-flow: row;
+			}
+			#search{
+				height: 100%;
+				width: 50%;
+				/*border: 1px solid red;*/
+				background:url(../img/微信第一页/放大镜.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				transform: scale(.7);
+			}
+			#add{
+				height: 100%;
+				width: 50%;
+				/*border: 1px solid black;*/
+				background:url(../img/微信第一页第一次修改/加.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			#tir2{
+				width: 100%;
+				height: 100%;
+				flex-grow:1;
+				display: flex;
+				flex-flow: row nowrap;
+				position: relative;
+			}
+			#lianxiren{
+				width: 100%;
+				overflow: scroll;
+			}
+			a{
+				text-decoration: none;
+			}
+			#lianxiren a{
+				
+				display: inline-block;
+				width: 100%;
+				background-color: #E0E0E0;
+			}
+			#lianxiren div{
+				width: 100%;
+				height: 50px;
+				/*border-bottom: 1px solid #BDBDBD;*/
+				background-color: white;
+			}
+			#dingwei{
+				width: 30px;
+				height: 100%;
+				flex-grow: 1;
+				position: absolute;
+				right: 10px;
+				display: flex;
+				flex-flow: column;
+			}
+			#dingwei div{
+				width: 100%;
+				height: 100%;
+				flex-grow: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			::-webkit-scrollbar{
+				display: none;
+			}
+
+			#for2{
+				width: 100%;
+				height: 50px;
+				background-color: white;
+				display: flex;
+				flex-flow:row;
+				justify-content: space-around;
+			}
+			#weichat{
+				/*border: 1px solid red;*/
+				width:100%;
+				height: 100%;
+				background: url(../img/微信第一页第一次修改/微信.png);
+				background-size: contain;
+				/*background-position: center;*/
+				background-repeat:no-repeat;
+			}
+			#relation{
+				/*border: 1px solid red;*/
+				width:100%;
+				height: 100%;
+				background: url(../img/微信第一页第一次修改/通讯录txl.png);
+				background-size: contain;
+				/*background-position: center;*/
+				background-repeat:no-repeat;
+			}
+			#find{
+				/*border: 1px solid red;*/
+				width:100%;
+				height: 100%;
+				background: url(../img/微信第一页第一次修改/发现.png);
+				background-size: contain;
+				/*background-position: center;*/
+				background-repeat:no-repeat;
+			}
+			#me{
+				/*border: 1px solid red;*/
+				width:100%;
+				height: 100%;
+				background: url(../img/微信第一页第一次修改/我.png);
+				background-size:contain;
+				background-position: center;
+				background-repeat:no-repeat;
+				transform: scale(1.6);
+			}
+			.word{
+				color: #515151;
+				font-size:xx-small ;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			#fif2 {
+				width: 100%;
+				height: 45px;
+				background: black;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				/*border: 1px solid red;*/
+			}
+			#goback{
+				width:33%;
+				height:55%;
+				background: url(../img/微信第一页第一次修改/返回.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat:no-repeat;
+				/*border: 1px solid red;*/
+			}
+			#home{
+				width: 33%;
+				height:55%;
+				background: url(../img/微信第一页第一次修改/圆圈-2.png);
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid blue;*/
+				background-repeat:no-repeat;
+			}
+			#recently{
+				width: 33%;
+				height: 55%;
+				background: url(../img/微信第一页第一次修改/正方形.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat:no-repeat;
+			}
+		   .people{
+			    width: 100%;
+				height: 55px;
+				border-bottom: 1px solid #BDBDBD;
+				display: flex;
+				flex-flow: row;
+				align-items: center;
+				padding: 5px;
+				text-align: center;
+				line-height: 55px;
+		    }
+		    /*.touxiang {
+				width: 40px;
+				height:40px;
+				margin-left: 5px;
+			}*/
+			#p1{
+				background:url(../img/微信第一页第一次修改/新的朋友.png) ;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex: 1;
+			}
+			#p2{
+				background:url(../img/微信第一页第一次修改/群聊.png) ;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex: 1;
+			}
+			#p3{
+				background:url(../img/微信第一页第一次修改/标签.png) ;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex: 1;
+			}
+			#p4{
+				background:url(../img/微信第一页第一次修改/公众号.png) ;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex: 1;
+				transform: scale(.8);
+			}
+			#p5{
+				background:url(../img/微信第一页第一次修改/微信图片_20170801102750.jpg) ;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex: 1;
+				transform: scale(.8);
+			}
+			#p6{
+				background:url(../img/微信第一页第一次修改/图3.jpg) ;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex: 1;
+				transform: scale(.8);
+			}
+			#p7{
+				background:url(../img/微信第一页第一次修改/图4.jpg) ;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex: 1;
+				transform: scale(.8);
+			}
+			#p8{
+				background:url(../img/微信第一页第一次修改/图5.jpg) ;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex: 1;
+				transform: scale(.8);
+			}
+			#p9{
+				background:url(../img/微信第一页第一次修改/图6.jpg) ;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex: 1;
+				transform: scale(.8);
+			}
+			#p10{
+				background:url(../img/微信第一页第一次修改/图7.jpg) ;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex: 1;
+				transform: scale(.8);
+			}
+			#p10{
+				background:url(../img/微信第一页第一次修改/图8.jpg) ;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				flex: 1;
+				transform: scale(.8);
+			}
+			#text{
+				/*width: 70%;*/
+				line-height: 55px;
+				display: flex;
+				flex: 8;
+				font-family: '微软雅黑';
+				color:#212121;
+				align-items: center;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="contain">
+			<div id="fir2">
+				<div id="time">9:42</div>
+				<div id="power"></div>	
+				<div id="xinghao"></div>
+				<div id="n4g"></div>
+			</div>
+			<div id="sec2">
+				<div id="sec2-left">微信(1)</div>
+				<div id="sec2-right">
+					<div id="search"></div>
+					<div id="add"></div>
+				</div>
+			</div>
+
+			<div id="tir2">
+				<div id="lianxiren">
+				<div class="people">
+					<div id="p1"></div>
+					<div id="text">新的朋友</div>
+				</div>
+				<div class="people">
+					<div id="p2"></div>
+					<div id="text">群聊</div>
+				</div>
+				<div class="people">
+					<div id="p3"></div>
+					<div id="text">标签</div>
+				</div>
+				<div class="people">
+					<div id="p4"></div>
+					<div id="text">公众号</div>
+				</div>
+				<a id="a">A</a>
+				<div class="people">
+					<div id="p5"></div>
+					<div id="text">A~</div>
+				</div>
+				<a id="b">B</a>
+				<div class="people">
+					<div id="p6"></div>
+					<div id="text">白慧敏</div>
+				</div>
+				<div class="people">
+					<div id="p7"></div>
+					<div id="text">白江涛</div>
+				</div>
+				<a id="c">C</a>
+				<div class="people">
+					<div id="p8"></div>
+					<div id="text">陈震</div>
+				</div>
+				<a id="d">D</a>
+				<div class="people">
+					<div id="p9"></div>
+					<div id="text">代雅君</div>
+				</div>
+				<div><a id="e">E</a></div>
+				<div><a id="f">F</a></div>
+				<div><a id="g">G</a></div>
+				<div><a id="h">H</a></div>
+				<div><a id="i">I</a></div>
+				<div><a id="j">J</a></div>
+				<div><a id="k">K</a></div>
+				<div><a id="l">L</a></div>
+				<div><a id="m">M</a></div>
+				<div><a id="n">N</a></div>
+				<div><a id="o">O</a></div>
+				<div><a id="p">P</a></div>
+				<div><a id="q">Q</a></div>
+				<div><a id="r">R</a></div>
+				<div><a id="s">S</a></div>
+				<div><a id="t">T</a></div>
+				<div><a id="u">U</a></div>
+				<div><a id="v">V</a></div>
+				<div><a id="w">W</a></div>
+				<div><a id="x">X</a></div>
+				<div><a id="y">Y</a></div>
+				<div><a id="z">Z</a></div>
+				<div><a id="#">#</a></div>
+				</div>
+			    <div id="dingwei">
+			    	<div>Top</div>
+			        <div>xin</div>
+			    	<div><a href="#a">A</a></div>
+			    	<div><a href="#b">B</a></div>
+			    	<div><a href="#c">C</a></div>
+			    	<div><a href="#d">D</a></div>
+			    	<div><a href="#e">E</a></div>
+			    	<div><a href="#f">F</a></div>
+			    	<div><a href="#g">G</a></div>
+			    	<div><a href="#h">H</a></div>
+			    	<div><a href="#i">I</a></div>
+			    	<div><a href="#j">J</a></div>
+			    	<div><a href="#k">K</a></div>
+			    	<div><a href="#l">L</a></div>
+			    	<div><a href="#m">M</a></div>
+			    	<div><a href="#n">N</a></div>
+			    	<div><a href="#o">O</a></div>
+			    	<div><a href="#p">P</a></div>
+			    	<div><a href="#q">Q</a></div>
+			    	<div><a href="#r">R</a></div>
+			    	<div><a href="#s">S</a></div>
+			    	<div><a href="#t">T</a></div>
+			    	<div><a href="#u">U</a></div>
+			    	<div><a href="#v">V</a></div>
+			    	<div><a href="#w">W</a></div>
+			    	<div><a href="#x">X</a></div>
+			    	<div><a href="#y">Y</a></div>
+			    	<div><a href="#z">Z</a></div>
+			    	<div><a href="##">#</a></div>
+			    </div>
+			</div>
+			<div id="for2">
+				<div style="display: flex;flex-flow: column;">
+					<div id="weichat"></div>
+					<div class="word"><a href="第一页.html">微信</a></div>
+				</div>
+				<div style="display: flex;flex-flow: column;">
+					<div id="relation"></div>
+					<div class="word">通讯录</div>
+				</div>
+				<div style="display: flex;flex-flow: column;">
+					<div id="find"></div>
+					<div class="word"><a href="第三页.html">发现</a></div>
+				</div>
+				<div style="display: flex;flex-flow: column;">
+					<div id="me"></div>
+					<div class="word">我</div>
+				</div>
+			</div>
+
+			<div id="fif2">
+				<div id="goback"></div>
+				<div id="home"></div>
+				<div id="recently"></div>
+			</div>
+		</div>
+	</body>
+</html>

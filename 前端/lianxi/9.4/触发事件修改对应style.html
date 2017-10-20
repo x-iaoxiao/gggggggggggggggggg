@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<select id="s">
+			<option value="green">green</option>
+			<option value="red">red</option>
+			<option value="yellow">yellow</option>
+		</select>
+		<div id="d">
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var s=document.getElementById("s");
+	
+	s.onchange=function(){
+		
+		document.getElementById("d").style.backgroundColor=this.value;
+		
+	}
+	
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*标记选择器*/
+			/*标记选择器就是专门针对某种标签做出的效果 优先级最低*/
+			div{
+				background-color: cadetblue;/*div背景颜色蓝色*/
+				width: 200px;
+				height: 150px;
+			}
+			p{
+				color:black;/*字体颜色黑色*/
+			}
+			/*类选择器*/
+			/*类选择器就是给某一个效果起一个名字，然后通过这个名字来引用这个效果*/
+			.color_yellow
+			{
+				background-color: gold;/*显示黄色*/
+			}
+			/*ID选择器*/
+			/*ID选择器就是给标签起任意名字然后在<style>中为这个名字单独设置效果*/
+			#id1{
+				background-color: coral;/*显示红色*/
+			}
+		</style>
+	</head>
+	<body>
+		<!--行内选择器-->
+		<div style="color: antiquewhite;size: ledger;background-color: aquamarine;"><p style="color: crimson;">行内的效果</p></div>
+		<hr>
+		<!--标记选择器-->
+		<div><p>用标记选择器的效果</p></div>
+		<hr>
+		<!--类选择器-->
+		<div class="color_yellow">
+			<p>用类选择器的效果</p>
+		</div>
+		<hr>
+		<!--ID选择器-->
+		<div id="id1">
+			<p>使用ID选择器的效果</p>
+		</div>
+	</body>
+</html>

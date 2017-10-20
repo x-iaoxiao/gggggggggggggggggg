@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		
+			input{
+				width: 300px;
+				height: 200px;
+				border: 1px solid #2F4F4F;
+			}
+
+		</style>
+	</head>
+	<body>
+		
+		<input type="text" name="" id="t" value="" />
+		
+		<div id="d">还可以输入147字</div>
+	
+	</body>
+</html>
+
+<script type="text/javascript">
+
+window.onload=function(){
+		
+	var t=document.getElementById("t");
+	
+	var d=document.getElementById("d");
+	
+	t.onchange=function(){
+
+       if(t.value.length<=147){
+//     	console.log(t.value);
+       d.innerText="还可以输入"+(147-t.value.length)+"字";
+       
+	   }
+       else {
+       	
+       	//裁剪超出的文本
+       }
+}
+}
+
+//input 内容改变之后必须在其他地方点击数标 div中的text才能改变
+//能否实现input中内容改变之后直接div中的内容就发送变化
+</script>

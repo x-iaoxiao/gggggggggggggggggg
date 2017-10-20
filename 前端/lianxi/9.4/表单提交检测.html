@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				width:80%;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<form id="frm" action="http://www.baidu.com">
+        <table id="table" align="center"border="1"cellspacing=0>
+        	<caption>个人简历</caption>
+        	<tr>
+        		<td width=6% >姓名</td>
+        		<td width=34% ><input id="name" placeholder="-必填-" required="required" type="text"/></td>
+        		<td width=10%>性别</td>
+        		<td width=30%>
+        		<select name="">
+        			<option value="">-请选择-</option>
+        			<option value="">女</option>
+        			<option value="">男</option>
+        			<option value="">其他</option>
+        		</select>
+        		</td>
+        		<td width=20% rowspan=4>照片</td>
+        	</tr>
+        	<tr>
+        		<td>年龄</td>
+        		<td contenteditable="true"></td>
+        		<td>籍贯</td>
+        		<td>
+        			<select id="s1">
+			          <option>-请选择-</option>
+			          <option>山西</option>
+			          <option>山东</option>
+		            </select>
+                    <select id="s2">
+        	          <option>-请选择-</option>
+                    </select>
+        		</td>
+        	</tr>
+        	<tr>
+        		<td>电话</td>
+        		<td contenteditable="true"><input placeholder="-必填-" required="required" type="text"/></td>
+        		<td>学历</td>
+        		<td>
+        			<input type="radio" />本科
+        		    <input type="radio" />大专
+        		    <input type="radio" />其他
+        		</td>
+        	</tr>
+        	<tr>
+        		<td>技能</td>
+        		<td>
+        			<input type="checkbox" name="" id="" value="" />java
+        			<input type="checkbox" name="" id="" value="" />pathon
+        			<input type="checkbox" name="" id="" value="" />javascript
+        			<!--<input type="radio" name="" id="" value="" />java-->
+        		</td>
+        		<td>电子邮箱</td>
+        		<td contenteditable="true"><input id="email" type="text"/></td>
+        	</tr>
+        	<tr height="120px">
+        		<td>个人简介</td>
+        		<td colspan=4 contenteditable="true"></td>
+        	</tr>
+        	<tr height="120px">
+        		<td>求职意向</td>
+        		<td colspan=4 contenteditable="true"></td>
+        	</tr>
+        	<tr height="120px">
+        		<td>实践经验</td>
+        		<td colspan=4 contenteditable="true"></td>
+        	</tr>
+        	<tr>
+        		<td colspan="5" align="center"><input type="submit" name="" id="sub" value="提交" /></td>
+        	</tr>
+        	<!--普通按钮提交(手动提交)-->
+        	<!--<tr>
+        		<td colspan="5" align="center"><input type="button name="" id="btn" value="提交" /></td>
+        	</tr>-->
+        </table>
+        </form>
+	</body>
+</html>
+<script type="text/javascript">
+
+window.onload=function(){
+	
+	//为普通按钮注册提交事件
+	
+//	var btn=document.getElementById("btn");
+//	btn.onclick=function(){
+//	   ...
+//     ..
+//     ..
+//     if(检验1失败){return;}
+//     if(检验2失败){return;}
+//     if(检验3失败){return;}
+//     .
+//     .
+//     .
+//  frm.submit();
+//	}
+
+//动态生成二级菜单（籍贯栏）
+	var s1=document.getElementById("s1");
+    
+    s1.onchange=function(){
+    	
+      var s2=document.getElementById("s2");
+      
+   	  var temp=this.selectedIndex;
+
+   	  switch(temp){
+
+   		case 1:
+   		
+		var s2=document.getElementById("s2");
+		var o1 = new Option("太原","0");
+		var o2 = new Option("临汾","1")
+		var o3 = new Option("大同","2")	
+		s2.options.add(o1);
+		s2.options.add(o2);
+		s2.options.add(o3);
+		break;
+		
+   		case 2:
+        s2.length=1;
+		var s2=document.getElementById("s2");
+		var o1 = new Option("菏泽","0");
+		var o2 = new Option("青岛","1")
+		var o3 = new Option("临沂","2")
+		s2.options.add(o1);
+		s2.options.add(o2);
+		s2.options.add(o3);	
+		break; 
+	}
+	}
+  
+ //提交时候的检验
+    var f=document.getElementById("frm");
+    
+    f.onsubmit=function(){
+    	
+    	//检验名字
+    	var ns=document.getElementById("name"); 
+//      console.log(ns.value.length);
+			if(ns.value.length<2){
+				alert("名字格式错误");
+			}
+			else{
+				
+//				ns.innerText="";
+			}
+			
+		//用正则表达式检验邮箱
+		var n=document.getElementById("email");
+		
+		var p= /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
+
+        if(!p.test(n.value)){
+        	alert("邮箱格式错误");
+        	
+        	return false;
+        }
+			
+		}
+   }
+</script>

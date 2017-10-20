@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			#contain {
+				position: fixed;
+				display: flex;
+				height: 100%;
+				width: 100%;
+				flex-flow: column;
+				border: 1px solid black;
+				justify-content: center;
+				/*overflow-y: scroll;*/
+			}
+			
+			#title {
+				width: 100%;
+				height: 50px;
+				border: 1px solid red;
+			}
+			
+			#content {
+				width: 100;
+				height: 100%;
+				flex-grow: 1;
+				/*border: 1px solid black;*/
+				display: flex;
+				flex-flow: row;
+				overflow-y: scroll;
+			}
+			
+			#left {
+				width: 10%;
+				height: 100%;
+				margin-top: 20px;
+				/*border-top: 20px solid white;*/
+				border: 1px solid red;
+				display: flex;
+				flex-flow: column;
+				text-align: center;
+				align-items: center;
+				font-family: "微软雅黑";
+			}
+			
+			.little-title {
+				width: 100%;
+				flex-grow: 1;
+				border-bottom: 1px solid black;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				
+			}
+			
+			#middle {
+				width: 55%;
+				height: 100%;
+				margin-top: 20px;
+				/*border-top: 20px solid white;*/
+				border: 1px solid blue;
+				display: flex;
+				align-items: center;
+				flex-flow: column;
+			}
+			
+			#middle-top-picture {
+				width: 630px;
+				height: 300px;
+				/*border: 1px solid red;*/
+				background: url(../img/微信第一页第一次修改/141229788073200593.jpg);
+				display: flex;
+				flex-flow: column;
+				flex-flow: column-reverse;
+			}
+			#middle-top-picture-show{
+				height: 30px;
+				width: 100%;
+				/*border: 1px solid red;*/
+				display: flex;
+				flex-flow: row;
+			}
+			#middle-top-picture-show-left{
+				width: 80%;
+				height: 100%;
+				color: white;
+				display: flex;
+				align-items: center;
+				text-indent: 15px;
+				/*justify-content: center;*/
+			}
+			#middle-top-picture-show-right{
+				width: 20%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+			}
+			.items{
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background-color: white;
+			}
+			.middle-content-item {
+				display: flex;
+				flex-flow: row;
+				width: 630px;
+				height: 185px;
+				border-bottom: 2px solid rgb(229, 229, 229);
+				padding: 10px;
+			}
+			#middle-content-item1-left{
+				display: flex;
+				width: 25%;
+				height: 100%;
+				/*margin: 10px;*/
+				justify-content: center;
+				align-items: center;
+				/*border: 1px solid red;*/
+			}
+			#middle-content-item1-left-pic{
+				width: 100%;
+				height: 80%;
+				background: url(../img/三胖-01.jpg);
+				background-size: cover;
+				background-repeat: no-repeat;
+				/*border: 1px solid black;*/
+			}
+			#middle-content-item1-right{
+				width:75% ;
+				height: 100%;
+			}
+			#middle-content-item1-right-bottom{
+				display: flex;
+				flex-flow: column;
+				width: 100%;
+				height: 100%;
+				border: 1px solid black;
+			}
+			#middle-content-item1-right-bottom-left{
+				width: 100%;
+				height: 100%;
+				border: 1px solid red;
+			}
+			#middle-content-item1-right-bottom-right{
+				width: 100%;
+				height: 100%;
+				border: 1px solid black;
+			}
+			#right {
+				width: 35%;
+				height: 100%;
+				margin-top: 20px;
+				/*border-top: 20px solid white;*/
+				border: 1px solid red;
+				display: flex;
+				flex-flow: column;
+			}
+			/*#blank{
+					width: 30px;
+				}*/
+			
+			#loadpage {
+				width: 300px;
+				height: 330px;
+				border-left: 30px solid #FFFFFF;
+				background-color: rgb(242, 242, 245);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 20px;
+			}
+			
+			#page {
+				height: 285px;
+				width: 300px;
+				border: 1px solid rgb(204, 204, 204);
+				display: flex;
+				flex-flow: column;
+				background-color: white;
+				padding: 15px;
+			}
+			
+			#right-loadpage-page-menue {
+				display: flex;
+				flex-flow: row;
+				width: 100%;
+				height: 35px;
+			}
+			
+			#right-loadpage-page-menue-dl {
+				display: flex;
+				width: 50%;
+				height: 100%;
+				border-bottom: 3px solid orangered;
+				justify-content: center;
+				
+			}
+			
+			#right-loadpage-page-menue-zc {
+				display: flex;
+				width: 50%;
+				height: 100%;
+				border-bottom: 1px solid rgb(242, 242, 245);
+				justify-content: center;
+			}
+			
+			#right-loadpage-page-name {
+				width: 100%;
+				height: 40px;
+				margin-top: 15px;
+				border: 1px solid rgb(242, 242, 245);
+			}
+			
+			#right-loadpage-page-name-peoplelogo {
+				width: 20%;
+				height: 100%;
+				background-color: pink;
+			}
+			
+			#right-loadpage-page-name-write {
+				width: 80%;
+				height: 100%;
+			}
+			
+			#right-loadpage-page-keyword {
+				width: 100%;
+				height: 40px;
+				margin-top: 15px;
+				border: 1px solid rgb(242, 242, 245);
+			}
+			
+			#right-loadpage-page-keyword-peoplelogo {
+				width: 20%;
+				height: 100%;
+				background-color: pink;
+			}
+			
+			#right-loadpage-page-keyword-write {
+				width: 80%;
+				height: 100%;
+			}
+			
+			#right-loadpage-page-check {
+				width: 100%;
+				height: 40px;
+				margin-top: 15px;
+				border: 1px solid rgb(242, 242, 245);
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			#right-loadpage-page-check-rememberme {
+				width: 30%;
+				height: 100%;
+				/*background-color: pink;*/
+				font-size: xx-small;
+				color: #A9A9A9;
+				display: flex;
+				flex-flow: row;
+				align-items: center;
+				justify-content: center;
+			}
+			#rem{
+				width: 15px;
+				background: #BDBDBD;
+				box-shadow: 0px 0px 1px #616161 inset;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			#right-loadpage-page-check-forgrtkeyword {
+				width: 30%;
+				height: 100%;
+				/*background-color: pink;*/
+				font-size: xx-small;
+				color: #A9A9A9;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			#right-loadpage-page-onload {
+				width: 100%;
+				height: 40px;
+				margin-top: 15px;
+				background-color: orange;
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				color: white;
+			}
+			
+			#right-loadpage-page-zhuce {
+				width: 100%;
+				height: 40px;
+				margin-top: 15px;
+				font-size: xx-small;
+				/*background-color: black;*/
+			}
+			#news{
+				width: 340px;
+				height:230px;
+				margin-left: 30px;
+				background-color: rgb(242, 242, 245);
+
+				border: 1px solid red;
+				}
+				a{
+					color: orange;
+					font-size:xx-small;
+				}
+		</style>
+	</head>
+
+	<body>
+		<div id="contain">
+			<div id="title"></div>
+			<div id="content">
+				<div id="left">
+					<div class="little-title">热门</div>
+					<div class="little-title">明星</div>
+					<div class="little-title">头条</div>
+					<div class="little-title">视频</div>
+					<div class="little-title">新鲜事</div>
+					<div class="little-title">榜单</div>
+					<div class="little-title">搞笑</div>
+					<div class="little-title">社会</div>
+					<div class="little-title">情感</div>
+					<div class="little-title">时尚</div>
+					<div class="little-title">军事</div>
+					<div class="little-title">美女</div>
+					<div class="little-title">体育</div>
+				</div>
+				<div id="middle">
+					<div id="middle-top-picture">
+						<div id="middle-top-picture-show">
+							<div id="middle-top-picture-show-left">今天你有没有演上反派？</div>
+							<div id="middle-top-picture-show-right">
+								<div class="items"style="background-color: orange;"></div>
+								<div class="items"></div>
+								<div class="items"></div>
+								<div class="items"></div>
+								<div class="items"></div>
+							</div>
+						</div>
+					</div>
+					<div id="middle-content-item1" class="middle-content-item">
+						<div id="middle-content-item1-left"><div id="middle-content-item1-left-pic"></div></div>
+						<div id="middle-content-item1-right">
+							<div id="middle-content-item1-right-word"></div>
+							<div id="middle-content-item1-right-bottom">
+								<div id="middle-content-item1-right-bottom-left"></div>
+								<div id="middle-content-item1-right-bottom-right"></div>
+							</div>
+						</div>
+					</div>
+					<div id="middle-content-item2" class="middle-content-item"></div>
+					<!--<div id="middle-content-item2" class="middle-content-item"></div>-->
+				</div>
+				<div id="right">
+					<div id="loadpage">
+						<div id="page">
+							<div id="right-loadpage-page-menue">
+								<div id="right-loadpage-page-menue-dl">账号登录</div>
+								<div id="right-loadpage-page-menue-zc">安全登录</div>
+							</div>
+							<div id="right-loadpage-page-name">
+								<div id="right-loadpage-page-name-peoplelogo"></div>
+								<div id="right-loadpage-page-name-write"></div>
+							</div>
+							<div id="right-loadpage-page-keyword">
+								<div id="right-loadpage-page-keyword-peoplelogo"></div>
+								<div id="right-loadpage-page-keyword-write"></div>
+							</div>
+							<div id="right-loadpage-page-check">
+								<div id="right-loadpage-page-check-rememberme"><div id="rem">√</div>记住我</div>
+								<div id="right-loadpage-page-check-forgrtkeyword">忘记密码</div>
+							</div>
+							<div id="right-loadpage-page-onload">登录</div>
+							<div id="right-loadpage-page-zhuce">还没有微博？<a href="http://localhost:8282/Beer-v2/">立即注册！</a></div>
+						</div>
+					</div>
+					<div id="news"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

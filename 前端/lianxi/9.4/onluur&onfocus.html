@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		姓名：<input id="name"/><span id="ns"></span>
+		<br>
+		年龄：<input id="age"/><span id="as"></span>
+	</body>
+</html>
+<script>
+		
+	window.onload=function(){
+		
+		var n = document.getElementById("name");
+		
+		var a = document.getElementById("age")
+		
+		n.onblur=function(){
+			
+			var ns=document.getElementById("ns"); 
+
+			if(n.value.length<2){
+				
+			    ns.innerText="名字格式错误";
+			    
+			    ns.style.color="red";
+			    
+//			    console.log("=========");//为什么会输出两次？
+			   
+			}
+			else{
+				
+				ns.innerText="";
+			}
+		}
+		
+		a.onblur=function(){
+			
+			var as=document.getElementById("as"); 
+			
+//			console.log(as);
+			
+			
+			if(parseInt(a.value)<0){
+				
+//				console.log(a.value);
+			    as.innerText="年龄有误";
+			    
+			    as.style.color="red";
+			   
+			}
+			else{
+//				console.log(a.value);
+				 as.innerText="";
+			}
+		}
+		
+		
+	}
+	
+</script>

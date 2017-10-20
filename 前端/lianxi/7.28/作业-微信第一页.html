@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin:0px;
+				padding:0px
+			}
+			#container{
+				width: 332px;
+				height:546px;
+				/*width: 100%;
+				height: 100%;*/
+				box-shadow:0px 0px 1px #BDBDBD;
+				/*display: flex;*/
+				overflow-y: scroll;
+			}
+			#show{
+				width: 332px;
+				height: 25px;
+				background-color:#212121;
+				/*border: 1px solid red;*/
+				display: flex;
+				flex-flow: nowrap;/*压缩时不会换行*/
+				flex-flow: row-reverse;
+			}
+			#top{
+				width: 332px;
+				height: 45px;
+				background-color: rgb(57,58,63);
+				/*display: flex;*/
+				color: #FFFFFF;
+				text-align: center;
+				line-height: 45px;
+				position: absolute;
+			}
+			#concent{
+				width: 332px;
+				height: 436px;
+				background-color:rgb(255,255,255);
+				/*border: 1px solid red;*/
+				position:absolute;
+				top:60px;
+				overflow-y: scroll;
+				
+			}
+			#bottom{
+				width: 332px;
+				height: 40px;
+				background-color:rgb(255,255,255);
+				border-top: 1px solid;
+				display: flex;
+				justify-content:space-around;
+				padding-top: 4px;
+				position: absolute;
+				top: 496px;
+			}
+			#concent div{
+				width: 332px;
+				height: 55px;
+				border-bottom: 1px solid #BDBDBD;
+				/*display: inline-block;*/
+				/*overflow: scroll;*/
+			}
+			.show-item{
+				height: 25px;
+				width: 35px;
+				color: #FFFFFF;
+				text-align: center;
+				line-height: 25px;
+			}
+			#right{
+				/*display: flex;*/
+				text-align: center;
+				line-height: 45px;
+				/*border: 1px solid #FFFFFF;*/
+				/*flex-flow: row-reverse;*/
+				position: absolute;
+				top: 5px;
+				right: 10px;
+			}
+			#r1{
+				width: 25px;
+				height: 25px;
+				background: url(../img/微信第一页/加号.png) no-repeat;
+				background-size: contain;
+				float: right;
+			}
+			#r2{
+				width: 30px;
+				height: 30px;
+				background: url(../img/微信第一页/放大镜.png) no-repeat;
+				background-size: contain;
+			    float:right;
+			    margin-right: 20px;
+				}
+			#bottom div{
+					width: 40px;
+					height: 40px;
+					text-align: center;
+					line-height: 40px;
+					/*border: 1px solid red;*/
+				}
+			#m1{
+					color: #FFFFFF;
+					font-size:larger;
+				}
+			#m2{
+					width: 15px;
+					height: 15px;
+					border: 2px solid #FFFFFF;
+					border-radius: 50%;
+					position: relative;
+					top: 7px;
+				}
+			#m3{
+					width: 15px;
+					height: 15px;
+					border: 2px solid #FFFFFF;
+					position: relative;
+					top: 7px;
+				}
+				#menue{
+					width:332px;
+					height:45px;
+					background-color: black;
+					display: flex;
+					justify-content: space-around;
+					position: absolute;
+				}
+				#tixing{
+					width: 2px;
+					height:2px;
+					border-radius:50%;
+					/*border:1px solid blue;*/
+					background-color: red;
+					border-radius: 50%;
+					position:absolute;
+					left:50px;
+					top:5540px;
+					color:#FFFFFF;
+					font-size: xx-small;
+				}
+				
+				.message{
+					height: 56px;
+					width: 332px;
+					display: flex;
+					justify-content: center;
+					/*border: 1 solid red;*/
+					text-align: center;
+					line-height: 56px;
+				}
+				.touxiang{
+					width: 15px;
+					height:15px;
+					/*border: 1px solid red;*/
+				}
+				#tx1{
+					background: url(../img/微信第一页/头像.jpg);
+					background-size: contain;
+					/*background-position: center;*/
+					background-repeat: no-repeat;
+					transform: scale(0.8);
+				}
+				::-webkit-scrollbar{
+					display: none;
+				}
+			/*#power{
+				background: url(../img/微信第一页/电池电量0.png);
+				background-repeat:no-repeat;
+				background-size: contain;
+				vertical-position: top;	
+			}
+			#xinghao{
+				background: url(../img/微信第一页/信号.png);
+				background-repeat:no-repeat;
+				background-size: contain;
+				vertical-position: top;	*/
+			}
+			/*#4glogo{
+				background: url(../img/微信第一页/4g.png);
+				background-repeat:no-repeat;
+				background-size: contain;
+				vertical-position: top;	
+			}
+			#wifilogo{
+				background: url(../img/微信第一页/WiFi.png);
+				background-repeat:no-repeat;
+				background-size: contain;
+				vertical-position: top;	
+			}
+			.right{
+				flex-flow: row-reverse;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="show">
+				<div class="show-item" id="time">3:52</div>
+				<div class="show-item" id="power"><img src="../img/微信第一页/电池电量0.png"/></div>
+				<div class="show-item" id="xinghao"><img src="../img/微信第一页/信号.png"/></div>
+				<div class="show-item" id="4glogo"><img src="../img/微信第一页/4g.png"/></div>
+				<div class="show-item" id="wifilogo"><img src="../img/微信第一页/WiFi.png"/></div>
+			</div>
+			<div id="top">
+				<div style="text-indent: 10px;float: left;">微信(19)</div>
+				<div id="right">
+					<div id="r1"></div>
+					<div id="r2"></div>
+				</div>
+			</div>
+			<div id="concent">
+				<div class="message">
+					<div class="touxiang"id="tx1"></div>
+					<div class="xingming">妈妈</div>
+					<div class="liaotian">视频聊天</div>
+					<div class="shijan">晚上8:09</div>
+				</div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div id="bottom">
+				<div>
+					<img src="../img/微信第一页/微信 (1).png">
+					<div id="tixing"style="width: 15px;height: 15px;"></div></div>
+				<div><img src="../img/微信第一页/发现.png"/></div>
+				<div><img src="../img/微信第一页/通讯录.png"/></div>
+				<div><img src="../img/微信第一页/我.png"/></div>
+			</div>
+			<div id="menue"style="width:332px;height:45px;background-color: black;display: flex;justify-content: space-around;position: absolute;top:536px ;">
+				<div id="m1">&gt;</div>
+				<div id="m2"></div>
+				<div id="m3"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			#con {
+				width: 100%;
+				height: 100%;
+				/*border: 1px solid red;*/
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content:space-between;
+				position: fixed;
+			}
+			
+			#first {
+				width: 100%;
+				height: 25px;
+				background-color: #212121;
+				display: flex;
+				flex-flow: row-reverse;
+				line-height: 25px;
+				align-items: center;
+			}
+			
+			#second {
+				width: 100%;
+				height: 45px;
+				background-color: rgb(57, 58, 63);
+				display: flex;
+			}
+			
+			#third {
+				width: 100%;
+				height: 100%;
+				flex-grow: 1;
+				/*border: 1px solid red;*/
+				/*box-shadow: 0px 0px 10px #808080;*/
+				/*border: 1px solid red;*/
+				overflow-y:scroll ;
+				
+				position: relative;
+			}
+			::-webkit-scrollbar{
+				display: none;
+			}
+			#forth {
+				width: 100%;
+				height: 50px;
+				display: flex;
+				/*border: 1px solid blue;*/
+				align-items: center;
+			}
+			
+			#fifth {
+				width: 100%;
+				height: 45px;
+				background: black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#time {
+				width: 10%;
+				height: 100%;
+				color: #FFFFFF;
+			}
+			
+			#power {
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/电池_battery142.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			#xinghao {
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/信号.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			#n4g {
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/n4g.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			#wifi {
+				width: 10%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/wifi.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			#second-left {
+				width: 60%;
+				height: 100%;
+				color: #FFFFFF;
+				/*text-indent: 3%;*/
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-start;
+				align-items: center;
+				/*vertical-align: middle;*/
+				/*border: 1px solid red;*/
+			}
+			
+			#second-right {
+				width: 40%;
+				height: 100%;
+				/*border: 1px solid red;*/
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			#search {
+				width: 30%;
+				height: 50%;
+				background: url(../img/微信第一页/放大镜.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#add {
+				width: 40%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/加.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#goback {
+				width: 34%;
+				height: 60%;
+				background: url(../img/微信第一页第一次修改/返回.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#home {
+				width: 33%;
+				height: 55%;
+				background: url(../img/微信第一页第一次修改/圆圈-2.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+			}
+			
+			#recently {
+				width: 33%;
+				height: 55%;
+				background: url(../img/微信第一页第一次修改/正方形.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid red;*/
+			}
+			
+			.div {
+				width: 25%;
+				height: 100%;
+				/*align-items: center;*/
+			}
+			
+			#weichat {
+				width: 100%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/微信绿色.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid blue;*/
+			}
+			
+			#relation {
+				width: 100%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/通讯录.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid blue;*/
+			}
+			
+			#find {
+				width: 100%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/发现.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid blue;*/
+			}
+			
+			#me {
+				width: 100%;
+				height: 80%;
+				background: url(../img/微信第一页第一次修改/我.png) no-repeat;
+				background-size: contain;
+				background-position: center;
+				/*border: 1px solid blue;*/
+				transform: scale();
+			}
+			
+			.word {
+				width: 100%;
+				height: 20%;
+				font-size: xx-small;
+				text-align: center;
+				line-height: 30%;
+				color: #515151;
+			}
+			
+			.wordword {
+				width: 100%;
+				height: 20%;
+				font-size: xx-small;
+				text-align: center;
+				line-height: 30%;
+				color: green;
+			}
+			
+			.mes {
+				width: 100%;
+				height: 55px;
+				border-bottom: 1px solid #808080;
+				display: flex;
+				flex-flow: row;
+				justify-content: space-between;
+				align-items: center;
+				/*padding: 5px;*/
+			}
+			
+			.touxiang {
+				width: 40px;
+				height:40px;
+				margin-left: 5px;
+			}
+			
+			.chat {
+				display: flex;
+				/*width: 100%;*/
+				flex-grow: 1;
+				height: 40px;
+				flex-flow: column nowrap;
+				justify-content: flex-start;
+				text-indent: 3px;
+				align-items: flex-start;
+				justify-content: flex-end;
+				/*border: 1px solid black;*/
+			}
+			
+			.shijian {
+				width: 40px;
+				height: 55px;
+				display: flex;
+				flex-flow: column nowrap;
+				font-size: xx-small;
+				/*padding: 5px;*/
+				border: 1px solid black;
+			}
+			#tx1{
+				background:url(../img/微信第一页第一次修改/头像.jpg) ;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			#tx3{
+				background:url(../img/微信第一页第一次修改/文件传输助手.png) ;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			#tx2{
+				background:url(../img/情侣-01.jpg) ;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			#tx4{
+				background:url(../img/微信第一页第一次修改/微故宫.jpg) ;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			#tx5{
+				background:url(../img/微信第一页第一次修改/田野.jpg) ;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			#tx6{
+				background:url(../img/微信第一页第一次修改/小纯洁.jpg) ;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			#tx7{
+				background:url(../img/微信第一页第一次修改/联通.jpg) ;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			#tx8{
+				background:url(../img/微信第一页第一次修改/麦当劳.jpg) ;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			#red{
+				width: 10px;
+				height: 10px;
+				background-color: red;
+				color: #FFFFFF;
+				font-size:5px;
+				border-radius: 50%;
+				position: absolute;
+				top: -5px;
+				right:-5px;
+				text-align: center;
+				line-height:10px ;
+			}
+			#red2{
+				width: 15px;
+				height: 15px;
+				background-color: red;
+				color: #FFFFFF;
+				font-size:5px;
+				border-radius: 50%;
+				position: absolute;
+				top: -5px;
+				right:30%;
+				text-align: center;
+				line-height:10px ;
+			}
+			a{
+				color: #515151;
+				text-decoration: none;
+			}
+		   
+		   
+		    .addmenu{
+		    
+		    	width: 145px;
+		    	
+		    	height: 200px;
+		    	
+		    	background-color: #515151;
+		    	
+		    	float: right;
+		    	
+		    	position: absolute;
+		    	top: 0;
+		    	right: 0;
+		    	
+		    } 
+		    .addmenuItem{
+		    	width: 100%;
+		    	border-bottom:1px solid black ;
+		    	height: 39px;
+		    	
+		    	color: white;
+		    	text-align: center;
+		    	line-height:49px ;
+		    }
+		</style>
+	</head>
+
+	<body>
+		<div id="con">
+			<div id="first">
+				<div id="time">9:42</div>
+				<div id="power"></div>
+				<div id="xinghao"></div>
+				<div id="n4g"></div>
+				<div id="wifi"></div>
+			</div>
+			<div id="second">
+				<div id="second-left">&nbsp;&nbsp;微信(1)</div>
+				<div id="second-right">
+					<div id="search"></div>
+					<div id="add"></div>
+				</div>
+			</div>
+			<div id="third">
+				<div class="mes">
+					<div id="tx3" class="touxiang "></div>
+					<div class="chat">
+						<div style="font-family: '微软雅黑';color: #212121;">文件传输助手</div>
+						<div style="font-family: '微软雅黑';font-size: x-small;color: #515151;">[图片]</div>
+					</div>
+					<div id="shijian1" class="shijan">
+						<div style="font-size: xx-small;">13:21&nbsp;&nbsp;</div>
+						<div style="font-size: xx-small;">静 音</div>
+					</div>
+				</div>
+				<div class="mes">
+					<div id="tx1" class="touxiang "></div>
+					<div class="chat">
+						<div style="font-family: '微软雅黑';color: #212121;"><a href="我和妈妈的聊天.html">妈妈</a></div>
+						<div style="font-family: '微软雅黑';font-size: x-small;color: #515151;">[视频聊天]</div>
+					</div>
+					<div id="shijian1" class="shijan">
+						<div style="font-size: xx-small;">13:21&nbsp;&nbsp;</div>
+						<div style="font-size: xx-small;">   </div>
+					</div>
+				</div>
+				<div class="mes">
+					<div id="tx2" class="touxiang"></div>
+					<div class="chat">
+						<div style="font-family: '微软雅黑';color: #212121;">郭静</div>
+						<div style="font-family: '微软雅黑';font-size: x-small;color: #515151;">你还真自己做饭</div>
+					</div>
+					<div id="shijian1" class="shijan">
+						<div style="font-size: xx-small;">13:21&nbsp;&nbsp;</div>
+						<div style="font-size: xx-small;"></div>
+					</div>
+				</div>
+				<div class="mes">
+					<div id="tx4" class="touxiang"style="position:relative;"><div id="red">1</div></div>
+					<div class="chat">
+						<div style="font-family: '微软雅黑';color: #212121;">微故宫</div>
+						<div style="font-family: '微软雅黑';font-size: x-small;color: #515151;">皇家高级感|清宫后妃最爱的时尚单品</div>
+					</div>
+					<div id="shijian1" class="shijan">
+						<div style="font-size: xx-small;">13:21&nbsp;&nbsp;</div>
+						<div style="font-size: xx-small;"></div>
+					</div>
+				</div>
+				<div class="mes">
+					<div id="tx5" class="touxiang "></div>
+					<div class="chat">
+						<div style="font-family: '微软雅黑';color: #212121;">田野</div>
+						<div style="font-family: '微软雅黑';font-size: x-small;color: #515151;">[转账]朋友已确认收钱</div>
+					</div>
+					<div id="shijian1" class="shijan">
+						<div style="font-size: xx-small;">13:21&nbsp;&nbsp;</div>
+						<div style="font-size: xx-small;"></div>
+					</div>
+				</div>
+				<div class="mes">
+					<div id="tx6" class="touxiang "></div>
+					<div class="chat">
+						<div style="font-family: '微软雅黑';color: #212121;">小纯洁</div>
+						<div style="font-family: '微软雅黑';font-size: x-small;color: #515151;">[视频聊天]</div>
+					</div>
+					<div id="shijian1" class="shijan">
+						<div style="font-size: xx-small;">13:21&nbsp;&nbsp;</div>
+						<div style="font-size: xx-small;"></div>
+					</div>
+				</div>
+				<div class="mes">
+					<div id="tx7" class="touxiang "></div>
+					<div class="chat">
+						<div style="font-family: '微软雅黑';color: #212121;">山西联通</div>
+						<div style="font-family: '微软雅黑';font-size: x-small;color: #515151;">畅视业务公测体验！</div>
+					</div>
+					<div id="shijian1" class="shijan">
+						<div style="font-size: xx-small;">13:21&nbsp;&nbsp;</div>
+						<div style="font-size: xx-small;">静 音</div>
+					</div>
+				</div>
+				<div class="mes">
+					<div id="tx8" class="touxiang"></div>
+					<div class="chat">
+						<div style="font-family: '微软雅黑';color: #212121;">麦当劳</div>
+						<div style="font-family: '微软雅黑';font-size: x-small;color: #515151;">5款嘻哈小食，通通只有10元！</div>
+					</div>
+					<div id="shijian1" class="shijan">
+						<div style="font-size: xx-small;">13:21&nbsp;&nbsp;</div>
+						<div style="font-size: xx-small;">静 音</div>
+					</div>
+				</div>
+			</div>
+			<div id="forth">
+				<div class="div">
+					<div id="weichat" style="transform: scale(.8); position:relative;"><div id="red2">1</div></div>
+					<div class="wordword">微信</div>
+				</div>
+				<div class="div">
+					<div id="relation"></div>
+					<a href="第二页.html"><div class="word">通讯录</div></a>
+				</div>
+				<div class="div">
+					<a href="第三页.html"><div id="find" style="transform: scale(.8)"></div></a>
+					<div class="word"><a href="第三页.html">发现</a></div>
+				</div>
+				<div class="div">
+					<div id="me" style="transform: scale(.8)"></div>
+					<div class="word">我</div>
+				</div>
+			</div>
+			<div id="fifth">
+				<div id="goback"></div>
+				<div id="home"></div>
+				<div id="recently"></div>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	
+	menudata=['发起群聊','添加朋友','扫一扫','收付款','帮助与反馈'];
+	
+	var add=document.getElementById("add");
+	
+	var flag=true;
+
+	add.onclick=function(){
+		
+		var fa=document.getElementById("third");
+		
+		if(flag){
+		
+		var menu=document.createElement("div");
+		
+		menu.className="addmenu";
+	
+		fa.appendChild(menu);
+		
+		for(var i=0;i<5;i++){
+			
+			var temp=document.createElement("div");
+			
+			temp.className="addmenuItem";
+			
+			temp.innerText=menudata[i];
+			
+			fa.lastChild.appendChild(temp);
+			
+			flag=false;
+			
+		}
+	}
+		else{
+			
+			fa.removeChild(fa.lastChild);
+			
+			flag=true;
+		}
+	}
+	
+</script>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>	</title>
+		<style>
+			input{
+				width: 100%;
+				height: 100%;
+			}
+			td{
+				border: none;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table border="1"width="30%" cellspacing="20" align="center">
+		<tr>
+			<td width="100%" height="70px"><input id="result" style="background-color: #E0E0E0;"/></td>
+		</tr>
+		<tr>
+			<td width="100%" height="40px"><input id="clear"  style="background-color: darksalmon" value="清除" /></td>
+		</tr>
+		</table>
+		<table border="1"width="30%" cellspacing="20"align="center">
+		<tr>
+			<td width="20%" height="40px"><input type="button" value="7" name="num"/></td>
+			<td width="20%" height="40px"><input type="button" value="8" name="num"/></td>
+			<td width="20%" height="40px"><input type="button" value="9" name="num"/></td>
+			<td width="40%" height="40px" bgcolor="coral"><input style="background-color: coral" value="/" name="method"/></td>
+		</tr>
+		<tr>
+			<td width="20%"height="40px"><input type="button" value="4" name="num"/></td>
+			<td width="20%"height="40px"><input type="button" value="5" name="num"/></td>
+			<td width="20%"height="40px"><input type="button" value="6" name="num"/></td>
+			<td width="40%"height="40px"bgcolor="coral"><input style="background-color: coral" value="*" name="method"/></td>
+		</tr>
+		<tr>
+			<td width="20%"height="40px"><input type="button" value="1" name="num"/></td>
+			<td width="20%"height="40px"><input type="button" value="2" name="num"/></td>
+			<td width="20%"height="40px"><input type="button" value="3" name="num"/></td>
+			<td width="40%"height="40px"bgcolor="coral"><input style="background-color: coral" value="-" name="method"/></td>
+		</tr>
+		<tr>
+			<td width="20%"height="40px"><input style="background-color: coral"type="button" value="." name="num"/></td>
+			<td width="20%"height="40px"><input type="button" value="0" name="num"/></td>
+			<td width="20%"height="40px"><input type="button" value="=" id="answer"/></td>
+			<td width="40%"height="40px"><input style="background-color: coral" value="+" name="method"/name="method"></td>
+		</tr>
+		</table>
+	</body>
+</html>
+
+	</body>
+</html>
+<script>
+
+    var num1='';
+	var num2='';
+	var m=null;
+//  console.log("OK");
+	var nums = document.getElementsByName("num");
+	for(var i=0;i<nums.length;i++){
+	nums[i].onclick=function(){
+		
+      if(m=null){
+      	
+      	num1+=this.value;
+      	
+      	console.log("num1:" +num1);
+      	
+      }
+      else{
+      	
+      	num2+=this.value;
+      	
+      	
+      }
+	}  
+	}
+	
+	var methods=document.getElementsByName("method");
+	
+	for(var j=0;j<methods.length;j++){
+		
+		methods[j].onclick=function(){
+			
+		m=this.value;
+		
+		}
+		
+	}
+
+    var answer=document.getElementById("answer");
+    
+    answer.onclick=function(){
+    	
+    	num1=parseInt(num1);
+    	num2=parseInt(num2);
+    	
+    	switch(m){
+    		
+    		case "+":
+    		   result.value=num1+num2;
+    		   break;
+    		case "-":
+    		   result.value=num1-num2;
+    		   break;
+    		case "*":
+    		   result.value=num1*num2;
+    		   break;
+    		case "/":
+    		   result.value=num1/num2;
+    		   break;
+    	}
+    	
+    	m=null;
+    	num1=0;
+    	num2=0;
+    }
+	
+	var c=document.getElementById("clear");
+	
+	c.onclick=function(){
+		
+		num1=0;
+		num2=0;
+		m=null;
+		result.value='1';
+		
+	}
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img id="Image" style="width: 200px;height: 200px;" src="../9.5/source.图片切换/2.jpg"/>
+	</body>
+</html>
+<script type="text/javascript">
+	var Imgge=document.getElementById("Image");
+	Imgge.onclick=function(){
+		
+		
+		if(confirm("切换？")){
+//		console.log(Imgge.src.toString())
+//		Imgge.src="../img/微信第一页第一次修改/小纯洁.jpg"//不规范写法
+        //规范写法
+		Imgge.setAttribute("src","../img/微信第一页第一次修改/小纯洁.jpg")
+	}
+	}
+</script>

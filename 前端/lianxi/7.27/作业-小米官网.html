@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		* {
+			margin:0px;
+			padding:0px;
+		}
+		.display{
+			display:inline-block;
+		}
+			#container{
+				width:1365px;
+				background-color: #A9A9A9;
+				position:relative;
+			}
+			#leader{
+				width:1365px;
+				height:30px;
+				background-color: darkslategrey;
+				padding-left: 55px;
+			}
+			.leader-meanue{
+				height: 25px;
+				color:#A9A9A9;
+				font-size: x-small;
+				line-height: 30px;
+				text-align: center;
+				border-right: 1px solid #A9A9A9 ;
+			}
+			#shopping-car{
+				width: 80px;
+				height: 30px;
+				position: absolute;
+				right:50px;
+				background-color: #808080;
+			}
+			#message{
+				width: 75px;
+				height: 30px;
+				position: absolute;
+				right: 130px;
+			}
+			#zhuce{
+				width: 50px;
+				height: 30px;
+				position: absolute;
+				right: 205px;
+			}
+			#load{
+				width: 50px;
+				height: 30px;
+				position: absolute;
+				right: 255px;
+			}
+			#second{
+				width: 1365px;
+				height: 105px;
+				position: absolute;
+				top:30px;
+				left: 0;
+				/*border: 1px solid red;*/
+			}
+			#picture{
+				/*height: 75px;
+				width: 75px;
+				background: url(../img/小米tubiao .jpg);
+				background-repeat: no-repeat;
+				background-size: cover;*/
+				width: 50px;
+				height: 50px;
+				background: url(../img/小米图标.jpg);
+				/*border: 1px solid blue;*/
+				position: absolute;
+				left: 55px;
+				top: 27.5px;	
+			}
+			#dpic{
+				width: 100px;
+				height: 50px;
+				/*border: 1px solid blue;*/
+				position: absolute;
+				left: 105px;
+				top:27.5px;
+				background: url(../img/动图1.jpg)no-repeat;
+				background-size: contain;
+			}
+			#menue{
+				width: 810px;
+				height: 50px;
+				position: absolute;
+				left: 205px;
+				top: 27.5px;
+				/*border: 1px solid yellow;*/
+			}
+			#search{
+				width: 245px;
+				height: 50px;
+				position: absolute;
+				left: 1015px;
+				top: 27.5px;
+				border: 1px solid #A9A9A9;
+				background: url(../img/框.jpg);
+			}
+			#search2{
+				width: 45px;
+				height: 50px;
+				position: absolute;
+				left: 1260px;
+				top: 27.5px;
+				border: 1px solid #A9A9A9;
+				background: url(../img/搜索.jpg)no-repeat;
+				
+			}
+			a{
+				width: 85px;
+				color: #696969;
+				height: 50px;
+				text-align: center;
+				line-height:50px ;
+				text-decoration:none;/*去掉超链接的下划线*/
+			}
+			a:hover{
+				color: gold;
+				/*background-color: gold;*/
+			}
+			.menue-color{
+				color: #F0F8FF;
+			}
+			#third{
+				height: 555px;
+				width: 1250px;
+				
+				position: absolute;
+				left: 55px;
+				top:133px;
+				background: url(../img/小米max.jpg)no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
+			.circle{
+				height: 5px;
+				width: 5px;
+				border: 1px solid #696969;
+				border-radius:50%;
+				background-color: #696969;
+				box-shadow: 0px 0px 5px #2F4F4F;
+			}
+			.menue-color{
+				color: white;
+				opacity: 1;
+			}
+			#left-menue{
+				width: 250px;
+				height: 555px;
+				background-color: #2F4F4F;
+				
+			}
+			.height{
+				line-height: 70px;
+			}
+			.max-menue{
+				height: 55.5px;
+			}
+			.bigger{
+				color:  #696969;
+				font-size: larger;
+				position: absolute;
+				left:220px;
+				text-align: center;
+				line-height: 50px;
+			}
+			#forth{
+				height: 225px;
+				width: 1250px;
+				/*border: 1px solid black;*/
+				position: absolute;
+			    top:700px;
+				left:55px;
+			}
+			#leader1{
+				width: 250px;
+				height: 225px;
+				/*border: 1px solid red;*/
+				background-color: #696969;
+				/*text-align: center;
+				line-height: 250px;*/
+				position: absolute;
+			}
+			.leader2{
+				width:77px;
+				height: 100px;
+				border: 1px solid white;
+			}
+			#show{
+				width: 1000px;
+				height: 220px;
+				/*border: 1px solid red;*/
+				position: absolute;
+				right: -18px;
+				top:2px;
+				text-align: center;
+				
+			}
+			.show-item{
+				height: 220px;
+				width: 317px;
+				/*border: 1px solid blue;*/	
+			}
+			.bgs{
+				/*第四层背景图片位置*/
+				background-size: cover;
+			}
+			#word{
+				width: 200px;height: 30px;
+				font-size: xx-large;
+				color: #696969;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="top">
+				<div id="leader">
+					<div class="display leader-meanue">小米商城</div>
+					<div class="display leader-meanue">MUI</div>
+					<div class="display leader-meanue">米聊</div>
+					<div class="display leader-meanue">游戏</div>
+					<div class="display leader-meanue">多看阅读</div>
+					<div class="display leader-meanue">云服务</div>
+					<div class="display leader-meanue">金融</div>
+					<div class="display leader-meanue">小米商城移动版</div>
+					<div class="display leader-meanue">问题反馈</div>
+					<div class="display leader-meanue">SlectRegion</div>	
+					<div id="load" class="display leader-meanue">登录</div>
+					<div id="zhuce" class="display leader-meanue">注册</div>
+					<div id="message" class="display leader-meanue">消息通知</div>
+				    <div id="shopping-car"class="display leader-meanue">购物车</div>
+				<div>    
+			</div>
+			<div id="second">
+				<div id="picture"class=""></div>
+				<div id="dpic"class="display"></div>
+				<div id="menue"class="display">
+					<a href="#"class="display height">小米手机</a>
+					<a href="#"class="display height">红米</a>
+					<a href="#"class="display height">平板.笔记本</a>
+					<a href="#"class="display height">电视</a>
+					<a href="#"class="display height">盒子.影音</a>
+					<a href="#"class="display height">路由器</a>
+					<a href="#"class="display height">智能硬件</a>
+					<a href="#"class="display height">服务</a>
+					<a href="#"class="display height">社区</a>
+				</div>
+				<div id="search"class="display"></div>
+				<div id="search2"class="display"></div>
+			</div>
+	        <div id="third">
+	        	<div id="left-menue">
+				<div class="max-menue display"><a>  手机 电话卡</a><div class="display bigger">&gt;</div></div>
+				<br>
+				<div class="max-menue display"><a>  笔记本 平板</a><div class="display bigger">&gt;</div></div>
+				<br>
+				<div class="max-menue display"><a>  电视 盒子</a><div class="display bigger">&gt;</div></div>
+				<br>
+				<div class="max-menue display"><a>  路由器 智能硬件</a><div class="display bigger">&gt;</div></div>
+				<br>
+				<div class="max-menue display"><a>  移动电源 电池 插线板</a><div class="display bigger">&gt;</div></div>
+				<br>
+				<div class="max-menue display"><a>  耳机 音箱</a><div class="display bigger">&gt;</div></div>
+				<br>
+				<div class="max-menue display"><a>  保护套 贴膜</a><div class="display bigger">&gt;</div></div>
+				<br>
+				<div class="max-menue display"><a>  线材 支架 存储卡</a><div class="display bigger">&gt;</div></div>
+				<br>
+				<div class="max-menue display"><a>  箱包 服饰 鞋 眼镜</a><div class="display bigger">&gt;</div></div>
+				<br>
+				<div class="max-menue display"><a>  米兔 生活周边</a><div class="display bigger">&gt;</div></div>
+				</div>
+			</div>
+			<div id="forth">
+				<div id="leader1"class="display">
+					<!--<div class="leader2 display "style="border-top: none;">-->
+					<!--<div class="leader2 display "style="border-top: none;"></div>
+					<div class="leader2 display "style="border-right: none;border-top:none;"></div>
+					<div class="leader2 display "></div>
+					<div class="leader2 display "></div>
+					<div class="leader2 display "style="border-right: none;"></div>-->
+					<div class="leader2 display"></div>
+					<div class="leader2 display"></div>
+					<div class="leader2 display"></div>
+					<div class="leader2 display"style="position: absolute;bottom: 4px;left: 2px;"></div>
+					<div class="leader2 display"style="position: absolute;bottom: 4px;left: 82px;"></div>
+					<div class="leader2 display"style="position: absolute;bottom: 4px;right: 2px;"></div>
+				</div>
+				<div id="show" class="display">
+					<div class="show-item display bgs"style="background: url(../img/第一张.jpg);"></div>
+					<div class="show-item display bgs"style="background: url(../img/第二张.jpg);"></div>
+					<div class="show-item display bgs"style="background: url(../img/第三张.jpg);"></div>
+				</div>
+			</div>
+			<div id="word">小米明星单品</div>
+			<div id="display">
+				<div class="product"></div>
+				<div class="product"></div>
+				<div class="product"></div>
+				<div class="product"></div>
+				<div class="product"></div>
+			</div>
+		</div>
+	</body>
+</html>

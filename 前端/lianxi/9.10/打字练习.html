@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			#border{
+				width:350px;
+				height:500px;
+                border:2px solid pink;	
+                position: relative;			
+			}
+			.item{
+				width: 30px;
+				height: 30px;
+				border-radius:50%;
+				background-color: peachpuff;
+				line-height: 30px;
+				text-align: center;
+				color: #515151;
+				position: absolute;
+				top: 300px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="border"></div>
+		<hr>
+		<input type="button" id="start" value="start" />
+		<input type="button" id="stop" value="stop" />
+		<input type="button" id="restart" value="restart" />
+		<hr>
+		score:<div id="score">0</div>
+		miss:<div id="miss">0</div>
+	</body>
+</html>
+<script type="text/javascript">
+
+	//生成字母
+	function randomletter(){
+		var letter=Math.round(65+Math.random()*26);
+		return String.fromCharCode(letter);
+	}
+	//生成位置
+	function randomposition(){
+		var rp=10+Math.round(Math.random()*300);
+		return rp;
+	}
+	//随机生成字母块
+	function randomitem(){
+		var f=document.getElementById("border");
+	    var item=document.createElement("div");
+	    item.className="item";
+	    item.innerText=randomletter();
+	    item.style.left=randomposition()+"px";
+        f.appendChild(item);
+	}
+    //为start注册事件
+    var ri
+    var start=document.getElementById("start");
+    start.onclick=function(){
+        ri=setInterval(randomitem,1000);
+    }
+    //为stop注册事件
+     var stop=document.getElementById("stop");
+     stop.onclick=function(){
+     	clearInterval(ri);
+     }
+     //为restart注册事件
+     var restart=document.getElementById("restart");
+     restart.onclick=function(){
+     	clearInterval(ri);
+     	var fat=document.getElementById("border");
+     	var items=document.getElementsByClassName("item");
+     	for(var i=items.length;i>0;i--){
+     		fat.removeChild(fat.lastChild);
+     	}
+     	setInterval(randomitem,1000);
+     }
+	//控制字母块移动一次
+	function move(){
+		var items=document.getElementsByClassName("item");
+		for(var i=0;i<items.length;i++){
+			
+			//获取item当前的位置
+			//位置+得到新的位置
+			//修改style
+		}
+	}
+	//匹配删除
+	//砰地消失
+</script>

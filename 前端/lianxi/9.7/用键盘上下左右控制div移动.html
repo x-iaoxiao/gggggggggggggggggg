@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#d1{
+				width: 30px;
+				height: 30px;
+				background-color: yellow;
+				border-radius: 50%;
+				position: fixed;
+				left: 50px;
+				top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1"></div>
+	</body>
+</html>
+<script type="text/javascript">
+
+	var l=50;
+	var t=50;
+	var circle=document.getElementById("d1");
+	
+	window.onkeydown=function(){
+		
+		console.log(event.keyCode);
+		
+		var k=event.keyCode;
+		
+		switch(k){
+			
+			case 37:
+			    circle.style.left=(l-5)+"px";
+			    l-=10;
+			    break;
+			case 38:
+			    circle.style.top=(t-5)+"px";
+			    t-=10;
+			    break;
+			case 39:
+			    circle.style.left=(l+5)+"px";
+			    l+=10;
+				break;
+			case 40:
+			    t+=10;
+			    circle.style.top=(t+5)+"px";
+			    break;
+			default:
+			    break;
+			    
+		}
+	
+	}
+	
+	
+</script>

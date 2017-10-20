@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<select id="s1">
+			<option>-请选择-</option>
+			<option>山西</option>
+			<option>山东</option>
+		</select>
+		
+        <select id="s2">
+        	<option>-请选择-</option>
+        </select>
+	</body>
+</html>
+<script type="text/javascript">
+     
+   
+    var s1=document.getElementById("s1");
+    
+    s1.onchange=function(){
+    	
+      var s2=document.getElementById("s2");
+      
+   	  var temp=this.selectedIndex;
+
+   	  switch(temp){
+
+   		case 1:
+   		
+		var s2=document.getElementById("s2");
+		var o1 = new Option("太原","0");
+		var o2 = new Option("临汾","1")
+		var o3 = new Option("大同","2")	
+		s2.options.add(o1);
+		s2.options.add(o2);
+		s2.options.add(o3);
+		break;
+		
+   		case 2:
+        s2.length=1;
+		var s2=document.getElementById("s2");
+		var o1 = new Option("菏泽","0");
+		var o2 = new Option("青岛","1")
+		var o3 = new Option("临沂","2")
+		s2.options.add(o1);
+		s2.options.add(o2);
+		s2.options.add(o3);	
+		break;
+	   
+	    
+	    
+	}
+   	
+   	
+   	
+	}
+</script>

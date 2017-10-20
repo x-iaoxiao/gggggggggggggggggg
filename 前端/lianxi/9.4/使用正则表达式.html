@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="" name="in" id="in" value="" />
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var i=document.getElementById("in");
+	i.onblur=function(){
+		
+		var p= /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
+
+        if(!p.test(this.value)){
+        	console.log("格式错误");
+        }
+        else {
+        	console.log(this.value);
+        }
+	}
+</script>

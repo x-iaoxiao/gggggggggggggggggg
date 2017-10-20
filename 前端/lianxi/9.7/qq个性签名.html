@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="pp" contenteditable="true">在此编辑个性签名</p>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var pp=document.getElementById("pp");
+	
+	//可以在表单提交时将p变为input 使个性签名可以提交
+	pp.onclick=function(){
+		
+//		pp.outerHTML="<input />"+pp.innerHTML;
+	}
+	
+</script>

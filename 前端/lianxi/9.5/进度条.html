@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#d1{
+				width: 100px;
+				height: 30px;
+				background-color: #808080;
+			}
+			#d2{
+				width: 50px;
+				height:30px;
+				background-color:#DEB887;
+				line-height:30px ;
+				text-align: center;
+				color: #F0F8FF;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="d1">
+			<div id="d2">0%
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var l=1;
+	
+	function grow(){
+	if(l<=100){
+		var d2=document.getElementById("d2");
+		d2.style.width=l+"px";
+		
+		d2.innerHTML=l+"%";
+		l++;
+	}
+	else{	
+		window.clearInterval(f);
+	}
+	}
+	
+	setInterval("grow()",50);
+</script>

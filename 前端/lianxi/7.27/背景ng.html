@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#bg1{
+				width: 200px;
+				height: 200px;
+				background-color: #DEB887;
+				opacity: .5;
+				text-align: center;
+				line-height: 200px;
+			}
+			#bg2{
+				width: 500px;
+				height:500px;
+				border:1px solid red;
+				background:url(../img/奥巴马-01.jpg);
+				background-repeat:no-repeat;
+				background-position:center;
+				
+			}
+			#bg3{
+				width: 500px;
+				height:500px;
+				border:1px solid red;
+				background:url(../img/奥巴马-01.jpg);
+				background-size:cover;
+			}
+			#bg4{
+				width: 500px;
+				height:500px;
+				border:1px solid red;
+				background:url(../img/奥巴马-01.jpg);
+				background-repeat:no-repeat;
+				background-size:;/*cover*/
+				/*cover不会有留白 但背景图片可能溢出*/
+				/*contain不会溢出 但是可能会有留白*/
+			}
+			#bg5{
+				width: 500px;
+				height:500px;
+				border:1px solid red;
+				background:url(../img/奥巴马-01.jpg);
+				background-repeat:no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="bg1">背景透明</div>
+		<hr>
+		<div id="bg2">图片背景不平铺+背景居中效果</div>
+		<hr>
+		<div id="bg5">图片背景不平铺</div>
+		<hr>
+		<div id="bg3">图片大小cover效果</div>
+		<hr>
+		<div id="bg4">图片大小contain效果</div>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>2017-10-14</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- <servlet>
+  	<servlet-name>test</servlet-name>
+  	<servlet-class>com.neuedu.action.TestServlet</servlet-class>
+  	<init-param>
+  		<param-name>Encoding</param-name>
+  		<param-value>Gbk</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>testkey</param-name>
+  		<param-value>testvalue</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>test</servlet-name>
+  	<url-pattern>/test.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>emplist</servlet-name>
+  	<servlet-class>com.neuedu.action.EmplistAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>emplist</servlet-name>
+  	<url-pattern>/emplist.do</url-pattern>
+  </servlet-mapping> -->
+  <servlet>
+  	<servlet-name>testjsp</servlet-name>
+  	<jsp-file>/index.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>testjsp</servlet-name>
+  	<url-pattern>/testjsp.do</url-pattern>
+  </servlet-mapping>
+</web-app>
